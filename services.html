@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Services | Blue Ember Concepts</title>
+  <meta name="description" content="Design, digital, display and decor from Blue Ember Concepts: identity, campaigns, signage and spaces for Jamaican businesses.">
+  <meta name="theme-color" content="#081A2E">
+  <meta property="og:title" content="Services | Blue Ember Concepts">
+  <meta property="og:description" content="Design, digital, display and decor from Blue Ember Concepts: identity, campaigns, signage and spaces for Jamaican businesses.">
+  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Runs before anything else on the page:
+       1. Show the intro loader once per visit.
+       2. Image fallback chain (local WebP -> original -> backup). It must exist before
+          the first <img> starts loading, or a fast failure would be missed. */
+    (function () {
+      var root = document.documentElement;
+      try { root.classList.add(sessionStorage.getItem("be-loaded") ? "no-loader" : "is-loading"); }
+      catch (e) { root.classList.add("no-loader"); }
+      document.addEventListener("error", function (e) {
+        var el = e.target;
+        if (el.tagName !== "IMG" || !el.dataset.fallback) return;
+        var list = el.dataset.fallback.split("|"), next = list.shift();
+        if (list.length) el.dataset.fallback = list.join("|"); else el.removeAttribute("data-fallback");
+        el.dataset.retrying = "1";
+        el.src = next;
+      }, true);
+    })();
+  </script>
+</head>
+<body>
+  <div class="press-progress" aria-hidden="true"></div>
+  <div class="loader" id="loader" aria-hidden="true">
+    <canvas class="flame loader-flame" data-flame="loader"></canvas>
+    <div class="loader-center">
+      <svg class="loader-logo" viewBox="-6 -6 112 112">
+        <defs>
+          <g id="logoPaths"><path pathLength="1" d="M46.3 3.5 C45.3 3.5 43.4 3.8 42.3 4 C41.7 4.1 40.6 4.3 39.8 4.4 C39 4.6 38 4.8 37.5 5 C37 5.1 36.2 5.4 35.7 5.5 C35.1 5.6 34.4 5.9 33.9 6.1 C33.5 6.3 32.9 6.5 32.6 6.6 C32.3 6.7 31.6 6.9 31.2 7.1 C30.7 7.4 30.1 7.6 29.8 7.7 C29.6 7.8 29.1 8 28.8 8.2 C28.5 8.4 28.1 8.6 27.8 8.7 C27.5 8.9 27.1 9.1 26.8 9.3 C26.6 9.4 26.1 9.7 25.9 9.8 C24 10.8 20 13.7 17.5 16.2 C13.6 19.8 9.2 25.8 7.6 29.6 C7.5 29.8 7.3 30.3 7.1 30.6 C6.9 30.9 6.7 31.4 6.6 31.8 C6.5 32.1 6.2 32.7 6.1 33.1 C5.9 33.4 5.6 34.1 5.5 34.5 C5.4 35 5.2 35.7 5 36.2 C4.8 36.6 4.6 37.4 4.5 37.9 C4.4 38.5 4.2 39.4 4 39.9 C3.4 42 3 45.6 3 49 C3 51.9 3.1 52 5.2 50.3 C5.6 50 6.1 49.6 6.3 49.5 C6.4 49.4 6.9 49.1 7.4 48.8 C7.8 48.5 8.3 48.2 8.5 48.1 C8.7 48.1 9.1 47.9 9.3 47.7 C9.6 47.5 10.1 47.3 10.4 47.2 C10.8 47.1 11.1 46.9 11.2 46.8 C11.8 46.5 12.1 45.3 12.9 41.1 C12.9 40.7 13.1 39.9 13.3 39.5 C13.5 39.1 13.7 38.4 13.8 38 C13.9 37.6 14.2 36.9 14.4 36.4 C14.6 35.9 14.8 35.3 14.9 35 C16.2 31.8 19.9 26.4 23 23.3 C25.7 20.7 29.3 18.1 31.7 17 C31.9 16.9 32.3 16.6 32.6 16.5 C32.9 16.3 33.5 16 33.8 15.9 C34.1 15.8 34.6 15.6 34.9 15.4 C35.2 15.3 35.8 15 36.2 14.9 C36.6 14.8 37.3 14.5 37.8 14.3 C38.3 14.1 39 13.9 39.4 13.8 C39.8 13.8 40.7 13.6 41.3 13.4 C45.2 12.3 53.8 12.3 57.2 13.3 C57.6 13.4 58.4 13.6 59.1 13.8 C59.7 13.9 60.6 14.1 61 14.3 C61.5 14.5 62.2 14.8 62.5 14.9 C62.9 15 63.5 15.2 63.9 15.4 C64.3 15.6 64.9 15.9 65.2 16 C65.5 16.1 65.9 16.3 66 16.4 C66.2 16.5 66.7 16.7 67.2 17 C75.4 21.4 82.7 30.1 85.2 38.4 C85.3 38.9 85.6 39.6 85.7 40.1 C85.9 40.5 86.1 41.4 86.2 42 C87 46.4 87.3 47.1 88.4 47.3 C89.1 47.4 89.4 47.5 89.8 47.8 C90.1 48.1 90.5 48.3 90.9 48.4 C91.3 48.5 91.6 48.7 91.9 48.9 C92.1 49.1 92.5 49.4 92.8 49.5 C93.1 49.6 93.5 49.9 93.8 50.2 C94.9 51.2 95.7 51.2 95.9 50.2 C96.2 49 95.6 42.6 95.1 40.5 C94.9 39.7 94.6 38.6 94.5 38.1 C94.4 37.5 94.1 36.7 94 36.2 C93.8 35.8 93.5 35 93.4 34.5 C93.2 33.9 93 33.3 92.8 33 C92.7 32.7 92.5 32.2 92.4 31.9 C91.9 30.7 90.8 28.4 89.5 26.3 C86.2 20.5 81.1 15.1 75.3 11.2 C74.3 10.6 73.3 9.9 73 9.8 C72.8 9.7 72.4 9.5 72.2 9.3 C72 9.2 71.5 8.9 71.1 8.8 C70.8 8.6 70.3 8.3 70.1 8.2 C69.9 8.1 69.4 7.9 69.1 7.7 C68.8 7.6 68.2 7.4 67.8 7.2 C67.5 7 66.8 6.7 66.4 6.6 C65.9 6.5 65.3 6.2 64.9 6.1 C64.6 5.9 63.8 5.6 63.2 5.5 C62.5 5.3 61.8 5.1 61.6 5 C60.9 4.8 60.2 4.6 59.1 4.4 C58.6 4.4 57.6 4.2 56.8 4 C54.2 3.5 53.6 3.5 50.1 3.4 C48.3 3.4 46.6 3.4 46.3 3.5Z"/><path pathLength="1" d="M43.1 21.1 C42.6 21.3 42.7 21.9 43.5 23.1 C45.5 26.3 46 31.5 44.7 35.7 C44.5 36.3 44.3 37 44.2 37.4 C44.1 37.7 44 38.2 43.8 38.5 C43.7 38.8 43.4 39.5 43.2 39.9 C42.5 41.6 40.7 44.9 39 47.4 C37.8 49 35.9 51.9 35.7 52.2 C35.6 52.4 35.4 52.8 35.2 53.2 C34.9 53.5 34.7 54.1 34.5 54.4 C34.4 54.7 34.2 55.2 34.1 55.5 C33.9 55.8 33.7 56.4 33.5 57 C33.4 57.6 33.2 58.3 33.1 58.7 C31 66.2 35.6 74.6 44.3 79.5 C49.1 82.2 52 82.8 52 80.9 C52 80.2 51.5 78.8 51.1 78.4 C50.9 78.2 50.6 77.8 50.5 77.5 C50.4 77.3 50.1 76.9 49.9 76.7 C49.2 75.9 47.7 73 47.4 71.5 C46.8 69.4 47 65.4 47.8 63.4 C47.9 62.9 48.2 62.3 48.2 62 C48.4 61.5 49.4 59.4 50 58.3 C50.3 57.9 50.7 57.2 50.9 56.8 C51.1 56.5 51.5 55.8 51.7 55.4 C52.4 54.1 53.5 51.9 53.7 51.1 C53.8 50.8 54 50.3 54.2 49.9 C54.4 49.5 54.6 48.7 54.8 47.9 C54.9 47.2 55.1 46.4 55.2 46.2 C56 43.1 55.6 37.5 54.2 34.8 C54.1 34.6 53.8 34 53.7 33.6 C53.2 32.4 51.8 30.2 50.1 28 C45.9 22.6 43.9 20.6 43.1 21.1Z"/><path pathLength="1" d="M57.5 45.4 C57.1 45.7 57.2 46.3 57.7 47.5 C57.9 48 58.2 48.9 58.3 49.6 C58.5 50.2 58.7 51.1 58.8 51.5 C59.2 53.3 59.3 56.7 59.1 57.8 C58.4 60.2 57.6 61.4 54.8 63.8 C50.3 67.7 49.3 69.8 50.2 73.2 C50.8 75.5 51 76.3 51.2 76.6 C51.3 76.8 51.5 77.3 51.6 77.7 C51.8 78.4 52.7 79.4 53.3 79.5 C54.1 79.7 57.1 78.4 59.5 76.8 C59.8 76.6 60.2 76.3 60.5 76.2 C61.9 75.3 64.8 72.4 65.4 71.2 C65.5 71 65.8 70.6 65.9 70.3 C67.5 68 68.1 62.2 67 59.3 C66.8 58.9 66.6 58.2 66.5 57.7 C66.4 57 66.2 56.7 66 56.2 C65.8 55.9 65.5 55.4 65.5 55 C65.3 54.5 65.2 54.3 65 54 C64.8 53.9 64.3 53.1 63.8 52.3 C62.3 49.9 60.6 47.7 59.1 46 C58.3 45.3 57.8 45.1 57.5 45.4Z"/><path pathLength="1" d="M78.8 47 C76 47.4 74.5 47.7 73.7 48 C73.3 48.2 72.7 48.4 72.3 48.5 C71.9 48.6 71.3 48.9 71.1 49.1 C70.8 49.2 70.3 49.4 70.1 49.6 C69.5 49.8 67.7 51 66.8 51.7 C65.8 52.6 65.6 53.4 66.2 54.3 C66.5 54.6 66.7 55 66.8 55.3 C66.9 55.7 67.2 56.2 67.4 56.4 C67.7 56.9 67.8 57 68.1 58.2 C68.2 58.9 68.8 60.2 69 60.5 C69.4 60.9 69.4 60.8 70.9 59.1 C72.7 56.9 77.1 54.8 80 54.8 C81.8 54.8 84.1 55.6 85.8 56.7 C87.3 57.7 87.3 58.5 85.8 59.4 C85.4 59.6 84.9 59.9 84.6 60.1 C84.3 60.2 83.7 60.6 83.2 60.9 C82.7 61.2 81.8 61.7 81.2 62 C80.6 62.4 80 62.8 79.7 62.9 C79.5 63.1 79 63.4 78.6 63.6 C78.2 63.8 77.6 64.1 77.2 64.4 C76.9 64.6 76.2 65 75.7 65.3 C75.2 65.6 74.5 65.9 74.2 66.1 C73.9 66.3 73.4 66.6 73 66.8 C72.7 67 72.1 67.4 71.7 67.6 C70.1 68.5 69.7 68.7 69.1 69 C68.6 69.1 68.3 69.3 68.2 69.4 C67.8 69.9 67 71.2 66.8 71.6 C66.4 72.4 65.2 73.9 63.8 75.3 C62 77.1 62 77.1 62.4 78.1 C62.9 79.6 67.3 84.1 69 84.9 C69.4 85.1 69.7 85.3 69.8 85.4 C70 85.6 70.3 85.8 71 86 C71.4 86.2 71.7 86.3 72 86.6 C72.5 87 72.5 87 73.9 87.1 C74.9 87.2 75.7 87.8 75 88 C74.1 88.2 73.1 88.1 72.5 87.6 C72.3 87.4 72 87.3 71.8 87.2 C70.8 87.1 70.5 87 70.1 86.7 C69.9 86.5 69.4 86.2 69 86.1 C68.6 85.9 68.2 85.6 68 85.5 C66.7 84.3 65.7 84.4 63.1 85.7 C62.8 85.8 62.2 86.1 61.7 86.3 C57.7 87.6 57.2 88.1 57.6 90.3 C58.3 94.2 62.3 95.8 66.6 94 C67.1 93.7 67.8 93.5 68.1 93.4 C68.4 93.3 68.9 93 69.2 92.9 C69.5 92.7 70 92.5 70.3 92.3 C71.5 91.9 74.6 90 75.1 89.5 C75.3 89.3 75.5 89 75.7 88.7 C76 87.8 76 87.8 78.9 87.9 C81.2 88 82.6 87.9 84.2 87.5 C84.9 87.3 85.8 87.1 86.3 87 C86.7 86.8 87.5 86.6 88 86.3 C88.5 86.1 89 85.9 89.3 85.8 C92.1 84.7 96.3 81 98 78.2 C98.8 77 98.7 76.9 96.9 74.5 C92.8 69.4 92.6 69.3 91.8 71.7 C90.7 74.9 88.1 77.4 84.2 79 C79.8 80.7 74.3 79.5 72.4 76.3 C72.1 75.7 72.5 75.1 73.7 74.4 C74 74.2 74.5 73.9 74.8 73.8 C76.2 73 78 71.9 79.3 71.1 C79.7 70.9 80.4 70.5 80.9 70.2 C81.4 69.9 82.2 69.5 82.7 69.2 C85.6 67.5 87.3 66.5 87.9 66.1 C88.2 65.9 88.7 65.7 89.1 65.5 C89.4 65.3 89.9 65 90.2 64.8 C90.4 64.7 91.1 64.2 91.8 63.9 C92.4 63.5 93.2 63.1 93.4 62.9 C93.7 62.7 94.3 62.4 94.6 62.2 C95 62 95.6 61.7 96 61.5 C96.3 61.2 97.1 60.8 97.8 60.4 C99.8 59.2 99.9 59.1 99.4 58.4 C99.1 58.1 98.8 57.6 98.7 57.4 C97.4 55.1 94.4 51.5 93 50.6 C92.7 50.4 92.4 50.2 92.2 50 C92 49.7 91.7 49.6 91.2 49.5 C90.8 49.3 90.5 49.2 90.2 48.9 C89.8 48.5 89.7 48.5 88.8 48.4 C88.4 48.3 87.9 48.2 87.6 48 C87.1 47.7 86.8 47.7 85.8 47.5 C85.2 47.5 84.2 47.3 83.6 47.2 C82.4 47 79.5 46.9 78.8 47Z"/><path pathLength="1" d="M18 47.1 C15.9 47.3 14.1 47.6 12.9 48 C12.4 48.3 11.7 48.5 11.4 48.6 C8.2 49.4 3.1 53.9 1.2 57.7 C1.1 57.8 0.9 58.1 0.7 58.4 C0.1 59.2 0.3 59.5 3.2 61.1 C3.6 61.3 4 61.5 4.2 61.6 C4.3 61.7 4.8 62 5.2 62.3 C5.7 62.5 6.3 62.8 6.6 63 C6.8 63.2 7.5 63.5 8 63.8 C9.4 64.6 10.5 65.3 11.2 65.7 C11.6 66 12.3 66.3 12.6 66.5 C13.3 66.9 14.1 67.3 15 67.9 C15.3 68.1 15.9 68.4 16.2 68.6 C16.6 68.8 17.2 69.2 17.6 69.4 C18 69.7 18.7 70.1 19.2 70.3 C19.7 70.6 20.3 71 20.6 71.1 C20.9 71.3 21.4 71.6 21.8 71.8 C22.1 72 22.8 72.4 23.2 72.6 C23.6 72.9 24.2 73.2 24.5 73.4 C24.7 73.5 25.3 73.9 25.6 74.1 C28.3 75.5 28.4 76.1 26.1 78 C20.7 82.3 10.6 78.8 8.3 71.8 C7.5 69.4 7.3 69.5 3.4 74.4 C1.1 77.1 1.1 77 2.2 78.7 C3.7 80.9 6.3 83.3 8.8 84.8 C10.3 85.7 12.5 86.7 13.5 87 C13.9 87.1 14.8 87.3 15.4 87.5 C17.7 88.2 22.1 88.2 24.4 87.6 C28.9 86.4 31.1 85.2 34.1 82.6 C36.1 80.9 37.9 78.4 37.9 77.6 C37.9 77.2 37.7 76.9 36.3 75.4 C34.9 74 33.9 72.8 32.8 71 C31.8 69.4 31.7 69.3 30.9 69 C30.3 68.8 29.5 68.4 27.4 67.1 C27.1 66.9 26.6 66.7 26.4 66.5 C26.1 66.3 25.5 66 25.2 65.8 C24.8 65.6 24.3 65.3 24 65.1 C23.7 65 22.9 64.5 22.3 64.2 C21.7 63.8 21 63.4 20.7 63.2 C20.5 63.1 20 62.8 19.6 62.6 C19.3 62.4 18.7 62.1 18.4 61.9 C18.1 61.7 17.4 61.3 16.8 60.9 C16.1 60.6 15.3 60.1 14.9 59.9 C14.5 59.6 14 59.3 13.8 59.2 C12.4 58.4 13.4 56.8 15.9 55.9 C20.7 54.1 25.4 55.2 29.2 59.2 C30.5 60.5 30.7 60.5 31.1 58.9 C31.2 58.4 31.4 57.8 31.5 57.5 C31.6 57.2 31.9 56.6 32 56.2 C32.1 55.8 32.4 55.2 32.6 54.8 C33.4 53.6 33.6 52.6 33.4 52.2 C32.9 51.3 29.6 49.2 27.2 48.4 C26.7 48.2 25.9 47.9 25.6 47.8 C24.3 47.3 20.1 47 18 47.1Z"/><path pathLength="1" d="M33.6 85.3 C33.5 85.4 33.3 85.6 33.1 85.7 C32 86.6 29.2 88.1 27.7 88.5 C24.7 89.3 24.4 89.6 25.3 90.3 C25.9 90.9 29.5 92.9 30.8 93.4 C31.1 93.5 31.6 93.7 31.9 93.9 C32.2 94.1 32.9 94.4 33.5 94.5 C34 94.7 34.8 95 35.3 95.2 C38.7 96.4 42.6 93.8 42.7 90.3 C42.7 88.6 42 87.9 39.8 87.3 C39.3 87.2 38.5 86.9 38 86.7 C37.5 86.5 37 86.3 36.8 86.2 C36.6 86.1 36 85.9 35.5 85.6 C34.6 85.2 34.2 85.1 33.6 85.3Z"/></g>
+          <filter id="saberGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <use href="#logoPaths" class="saber-fill"/>
+        <use href="#logoPaths" class="saber-glow" filter="url(#saberGlow)"/>
+        <use href="#logoPaths" class="saber-blade"/>
+      </svg>
+      <p class="loader-name">Blue Ember Concepts</p>
+      <p class="loader-pct" aria-hidden="true"><span id="loaderPct">0</span>%</p>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand" aria-label="Blue Ember Concepts home">
+        <img class="brand-logo" src="logo.svg" alt="" width="36" height="36">
+        <span class="brand-name">Blue Ember</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">Studio</a>
+        <a href="bizplej.html">BizPlej</a>
+        <a href="index.html#desk">Client desk</a>
+        <a href="index.html#start" class="btn btn-flame nav-cta">Start a project</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero page-hero">
+      <canvas class="flame" data-flame aria-hidden="true"></canvas>
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-logo" style="top: 3%; left: 50%; transform: translateX(-50%); width: clamp(180px, 20vw, 300px); aspect-ratio: 1; opacity: 0.07;"></div></div>
+      <div class="wrap page-hero-inner">
+        <h1 class="page-title" style="--chars:8">Services</h1>
+        <div class="fan page-fan" data-speed="-0.05" role="group" aria-label="Featured pieces"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-Sale-Sheet_bleed-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Sale-Sheet_bleed.jpg" alt="Ironade sale sheet" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-observer-ad-new-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-observer-ad-new.jpg" alt="Universal Service Fund Observer ad" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553.jpg" alt="Ironade feather and pull-up banners" loading="lazy" decoding="async"></a></div>
+        <p class="hero-lede">Design, Digital, Display and Decor under one roof, so your brand looks like one company everywhere a customer meets it.</p>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Services">
+      <div class="wrap subnav-inner">
+        <a href="#design" class="chip">Design</a>
+        <a href="#digital" class="chip">Digital</a>
+        <a href="#display" class="chip">Display</a>
+        <a href="#decor" class="chip">Decor</a>
+        <a href="#process" class="chip">How we work</a>
+      </div>
+    </nav>
+
+    <section class="svc has-ghost" id="design" aria-labelledby="design-h">
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: -9vw; right: -7vw; width: clamp(240px, 26vw, 400px); aspect-ratio: 1; opacity: 0.09;"></div></div>
+      <div class="wrap svc-grid">
+        <header class="svc-head">
+          <h2 id="design-h" class="svc-title"><span class="dim-d">D</span>esign</h2>
+          <p class="svc-headline">Identity that holds together everywhere.</p>
+          <p class="svc-intro">Logos, identity systems, print campaigns and packaging. We build the look once, then make sure it works at every size and on every material, from a business card to a billboard.</p>
+          <a class="btn btn-flame" href="index.html?service=design#start">Start a design brief</a>
+        </header>
+        <div class="svc-detail">
+          <h3>What is included</h3>
+          <ul class="svc-list"><li>Logo and identity systems</li><li>Colour palettes and brand guidelines</li><li>Print campaigns and posters</li><li>Sale sheets and brochures</li><li>Packaging and labels</li><li>Promotional items</li></ul>
+          <div class="fan svc-fan" data-speed="-0.05" role="group" aria-label="esign work"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-12-X-18-Poster_Wild-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-12-X-18-Poster_Wild.jpg" alt="Ironade wild berry poster" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-Gleaner-Ad-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-Gleaner-Ad.jpg" alt="Universal Service Fund Gleaner ad" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-mccu" data-open-project="mccu"><img src="img/4x6-Car-Loan-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/4x6-Car-Loan.jpg" alt="Manchester Co-op car loan flyer" loading="lazy" decoding="async"></a></div><p class="dim-seen svc-seen">Seen in <button data-open-project="ironade">Ironade</button>, <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="mccu">Manchester Co-op</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc has-ghost" id="digital" aria-labelledby="digital-h">
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-monitor" style="bottom: -5vw; left: -6vw; width: clamp(280px, 30vw, 440px); aspect-ratio: 1; opacity: 0.08;"></div></div>
+      <div class="wrap svc-grid">
+        <header class="svc-head">
+          <h2 id="digital-h" class="svc-title"><span class="dim-d">D</span>igital</h2>
+          <p class="svc-headline">Made to stop the scroll.</p>
+          <p class="svc-intro">Social campaigns, motion graphics, and television and radio spots that give people a reason to pay attention, then a reason to act.</p>
+          <a class="btn btn-flame" href="index.html?service=digital#start">Start a digital brief</a>
+        </header>
+        <div class="svc-detail">
+          <h3>What is included</h3>
+          <ul class="svc-list"><li>Social media campaigns and content</li><li>Motion graphics</li><li>Television and radio ads</li><li>Photography</li><li>Website look and feel</li></ul>
+          <div class="svc-phone"><div class="phone3d phone-auto" data-phone role="img" aria-label="Phone showing social media posts"></div></div><p class="dim-seen svc-seen">Seen in <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="mccu">Manchester Co-op</button>, <button data-open-project="ironade">Ironade</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc has-ghost" id="display" aria-labelledby="display-h">
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: -9vw; right: -7vw; width: clamp(240px, 26vw, 400px); aspect-ratio: 1; opacity: 0.09;"></div></div>
+      <div class="wrap svc-grid">
+        <header class="svc-head">
+          <h2 id="display-h" class="svc-title"><span class="dim-d">D</span>isplay</h2>
+          <p class="svc-headline">Seen from across the road.</p>
+          <p class="svc-intro">Billboards, banners, vehicle wraps and point of sale, designed and produced for the street, the shelf and the event floor, and delivered islandwide.</p>
+          <a class="btn btn-flame" href="index.html?service=display#start">Start a display brief</a>
+        </header>
+        <div class="svc-detail">
+          <h3>What is included</h3>
+          <ul class="svc-list"><li>Billboards</li><li>Pull-up and feather banners</li><li>Vehicle wraps</li><li>Shelf hangers and lit towers</li><li>Event and training materials</li><li>Print production</li></ul>
+          <div class="fan svc-fan" data-speed="-0.05" role="group" aria-label="isplay work"><a class="fan-card" href="work.html#project-sutherland" data-open-project="sutherland"><img src="img/Southerland-Global5-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Southerland-Global5.jpg" alt="Sutherland print production" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/feather-banners-1200x1553-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/feather-banners-1200x1553.jpg" alt="Universal Service Fund feather banners" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-Lit-Tower-1200x1553-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Lit-Tower-1200x1553.jpg" alt="Ironade lit tower" loading="lazy" decoding="async"></a></div><p class="dim-seen svc-seen">Seen in <button data-open-project="sutherland">Sutherland</button>, <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="ironade">Ironade</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc has-ghost" id="decor" aria-labelledby="decor-h">
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="bottom: -5vw; left: -6vw; width: clamp(240px, 26vw, 400px); aspect-ratio: 1; opacity: 0.09;"></div></div>
+      <div class="wrap svc-grid">
+        <header class="svc-head">
+          <h2 id="decor-h" class="svc-title"><span class="dim-d">D</span>ecor</h2>
+          <p class="svc-headline">Spaces that feel like the brand.</p>
+          <p class="svc-intro">Décor and creative builds for offices, storefronts and brand spaces, so the room your customers walk into is as considered as the logo on the door.</p>
+          <a class="btn btn-flame" href="index.html?service=decor#start">Start a décor brief</a>
+        </header>
+        <div class="svc-detail">
+          <h3>What is included</h3>
+          <ul class="svc-list"><li>Office and reception décor</li><li>Storefront and shop spaces</li><li>Event and activation spaces</li><li>Creative builds and installations</li></ul>
+          <p class="seen-empty">Décor projects are being added to the archive. Start a décor brief and we will share relevant work with you directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process has-ghost" id="process" aria-labelledby="process-h">
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-wedge" style="top: -3vw; right: -5vw; width: clamp(240px, 24vw, 380px); aspect-ratio: 1.5;"></div></div>
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="process-h">How a project runs</h2>
+          <p>The same five stages whether it is a single flyer or a full brand launch.</p>
+        </header>
+        <ol class="process-list">
+          <li><h3>Brief</h3><p>Tell us what you need through the project brief, WhatsApp or a call.</p></li>
+          <li><h3>Concept</h3><p>We come back with a direction and first concepts to react to.</p></li>
+          <li><h3>Refine</h3><p>You review, we revise, until it is exactly right.</p></li>
+          <li><h3>Produce</h3><p>Final artwork, print, build or broadcast, handled by our team.</p></li>
+          <li><h3>Support</h3><p>We stay on for reprints, new campaigns and whatever comes next.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section faq has-ghost" id="faq" aria-labelledby="faq-h">
+      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: 4%; right: 3%; width: clamp(180px, 20vw, 320px); aspect-ratio: 1; opacity: 0.06;"></div></div>
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="faq-h">Common questions</h2>
+          <p>Answers before you call, in plain ink.</p>
+        </header>
+        <div class="faq-list">
+          <details>
+            <summary><span class="faq-q">Q1</span>What does a project cost?<span class="faq-x" aria-hidden="true"></span></summary>
+            <p class="faq-a">It depends on what the job needs, and you will know before we start. Every project gets a written quote once the brief is clear, so nothing is billed by surprise. If the number does not work for you, we will tell you what it would take to bring the job inside your budget.</p>
+          </details>
+          <details>
+            <summary><span class="faq-q">Q2</span>How long does a project take?<span class="faq-x" aria-hidden="true"></span></summary>
+            <p class="faq-a">A flyer can turn around in days; a full brand takes weeks. We agree the timeline in writing at the brief stage, and you hear from us at every stage of the run, not just at the end.</p>
+          </details>
+          <details>
+            <summary><span class="faq-q">Q3</span>Do you only work in Mandeville?<span class="faq-x" aria-hidden="true"></span></summary>
+            <p class="faq-a">Mandeville is home, but the work travels. We have delivered for clients across Jamaica, from Kingston hotels to parish credit unions, and production is handled under one roof either way.</p>
+          </details>
+          <details>
+            <summary><span class="faq-q">Q4</span>What should I bring to start?<span class="faq-x" aria-hidden="true"></span></summary>
+            <p class="faq-a">Nothing polished. Bring the problem you want solved, your deadline and a sense of budget. The project brief walks you through the rest, or simply call and tell us the story.</p>
+          </details>
+          <details>
+            <summary><span class="faq-q">Q5</span>Do you design only, or produce too?<span class="faq-x" aria-hidden="true"></span></summary>
+            <p class="faq-a">Both, and that is the point. We design in four dimensions and then carry the work through print, build or launch ourselves, so what you approve is what actually goes out into the world.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="wrap cta-inner">
+        <h2>Not sure which dimension you need?</h2>
+        <div class="hero-actions">
+          <a href="index.html#start" class="btn btn-flame">Start a project</a>
+          <a href="https://wa.me/18764251995" class="btn btn-ghost" target="_blank" rel="noopener">Ask us on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+
+    <canvas class="flame" data-flame data-intensity="0.8" aria-hidden="true"></canvas>
+    <div class="wrap footer-top">
+      <img class="footer-logo" src="logo.svg" alt="Blue Ember Concepts" width="128" height="128" data-flame-anchor>
+      <p class="footer-cta">Let’s frustrate tradition together.</p>
+      <div class="hero-actions footer-actions">
+        <a href="index.html#start" class="btn btn-flame">Start a project</a>
+        <a href="https://wa.me/18764251995" class="btn btn-ghost" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Visit</h3>
+        <address>Shop 1, Ward Plaza<br>35 Ward Avenue, Mandeville<br>Manchester, Jamaica</address>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="tel:+18766302583">(876) 630-2583</a></li>
+          <li><a href="https://wa.me/18764251995" target="_blank" rel="noopener">WhatsApp (876) 425-1995</a></li>
+          <li><a href="mailto:info@blueemberja.com">info@blueemberja.com</a></li>
+          <li><a href="mailto:project@blueemberja.com">project@blueemberja.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="footer-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="bizplej.html">BizPlej</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/blueemberconcepts/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/blueemberconcepts/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/BlueEmberConcepts" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/nelton-bella-johnson-7ba29314/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <p>© <span id="year"></span> Blue Ember Concepts Ltd.</p>
+      <a class="link-btn" href="index.html#tour" id="openTour">Take the site tour</a>
+      <a class="link-btn" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/18764251995?text=Hi%20Blue%20Ember%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="Chat with Blue Ember on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-bar">
+      <span class="drawer-grip" aria-hidden="true"></span>
+      <button class="icon-btn" data-close aria-label="Close project">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <button class="icon-btn lb-close" data-close aria-label="Close viewer">×</button>
+    <button class="lb-nav lb-prev" data-lb="-1" aria-label="Previous image">‹</button>
+    <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav lb-next" data-lb="1" aria-label="Next image">›</button>
+  </dialog>
+
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

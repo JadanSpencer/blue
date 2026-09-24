@@ -1,0 +1,14 @@
+{
+  "name": "blue-ember-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "node tools/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  },
+  "dependencies": {
+    "puppeteer": "^24.43.1"
+  }
+}
