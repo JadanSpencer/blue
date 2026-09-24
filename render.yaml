@@ -2,8 +2,31 @@ services:
   - type: web
     name: blue-ember-demo
     runtime: static
-    staticPublishPath: .
+    # Publish only the website. Tools, package files and config stay private.
+    buildCommand: mkdir -p dist && cp -r *.html data.js main.js styles.css logo.svg robots.txt sitemap.xml fonts img dist/
+    staticPublishPath: dist
     headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self' 'sha256-S1hD8T5VBi9HwRA+QjSnc+cRIb/OrEIZ5bfjw1ddQBE='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://blueemberja.com https://i.ytimg.com; font-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+      - path: /*
+        name: Strict-Transport-Security
+        value: "max-age=31536000"
+      - path: /*
+        name: X-Content-Type-Options
+        value: "nosniff"
+      - path: /*
+        name: X-Frame-Options
+        value: "DENY"
+      - path: /*
+        name: Referrer-Policy
+        value: "strict-origin-when-cross-origin"
+      - path: /*
+        name: Permissions-Policy
+        value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: "same-origin"
       - path: /fonts/*
         name: Cache-Control
         value: public, max-age=31536000, immutable

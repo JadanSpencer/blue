@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy Policy | Blue Ember Concepts</title>
+  <script>
+    /* Runs before anything else on the page:
+       1. Show the intro loader once per visit.
+       2. Image fallback chain (local WebP -> original -> backup). It must exist before
+          the first <img> starts loading, or a fast failure would be missed. */
+    (function () {
+      var root = document.documentElement;
+      try { root.classList.add(sessionStorage.getItem("be-loaded") ? "no-loader" : "is-loading"); }
+      catch (e) { root.classList.add("no-loader"); }
+      document.addEventListener("error", function (e) {
+        var el = e.target;
+        if (el.tagName !== "IMG" || !el.dataset.fallback) return;
+        var list = el.dataset.fallback.split("|"), next = list.shift();
+        if (list.length) el.dataset.fallback = list.join("|"); else el.removeAttribute("data-fallback");
+        el.dataset.retrying = "1";
+        el.removeAttribute("srcset");   // otherwise the browser keeps retrying the missing srcset file
+        el.src = next;
+      }, true);
+      // Photos ease in once fully downloaded, instead of painting in line by line.
+      document.addEventListener("load", function (e) {
+        if (e.target.tagName === "IMG") e.target.classList.add("is-in");
+      }, true);
+    })();
+  </script>
+  <meta name="description" content="How the Blue Ember Concepts website handles your information: what is collected, stored, shared, where AI is used, and how to have data deleted.">
+  <meta name="theme-color" content="#081A2E">
+  <meta property="og:title" content="Privacy Policy | Blue Ember Concepts">
+  <meta property="og:description" content="How the Blue Ember Concepts website handles your information: what is collected, stored, shared, where AI is used, and how to have data deleted.">
+  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="press-progress" aria-hidden="true"></div>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand" aria-label="Blue Ember Concepts home">
+        <img class="brand-logo" src="logo.svg" alt="" width="36" height="36">
+        <span class="brand-name">Blue Ember</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">Studio</a>
+        <a href="bizplej.html">BizPlej</a>
+        <a href="index.html#desk">Client desk</a>
+        <a href="index.html#start" class="btn btn-flame nav-cta">Start a project</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero legal-hero">
+      <canvas class="flame" data-flame aria-hidden="true"></canvas>
+      <div class="wrap page-hero-inner">
+        <h1 class="page-title" style="--chars:7">Privacy</h1>
+        <p class="hero-lede">What this website collects, where it goes, and how to have it deleted. Last updated 23 September 2026.</p>
+      </div>
+    </section>
+
+    <section class="section legal">
+      <div class="wrap legal-grid">
+        <nav class="legal-toc" aria-label="On this page">
+          <p>On this page</p>
+          <ol>
+            <li><a href="#p-summary">The short version</a></li>
+            <li><a href="#p-who">Who we are</a></li>
+            <li><a href="#p-collect">What we collect</a></li>
+            <li><a href="#p-device">What is stored on your device</a></li>
+            <li><a href="#p-third">Third parties</a></li>
+            <li><a href="#p-ai">Where AI is used</a></li>
+            <li><a href="#p-uploads">Uploads and file storage</a></li>
+            <li><a href="#p-keep">How long we keep things</a></li>
+            <li><a href="#p-security">Security</a></li>
+            <li><a href="#p-rights">Your rights</a></li>
+            <li><a href="#p-changes">Changes and contact</a></li>
+          </ol>
+        </nav>
+
+        <article class="legal-body">
+          <h2 id="p-summary">The short version</h2>
+          <p>This website does not use cookies, analytics or advertising trackers. It does not have accounts or logins. Nothing you type into a form on this site is sent to our servers: our forms prepare a WhatsApp message or an email on your own device, and nothing is sent until you press send in WhatsApp or your email app.</p>
+
+          <h2 id="p-who">Who we are</h2>
+          <p>This website is run by Blue Ember Concepts Ltd., Shop 1, Ward Plaza, 35 Ward Avenue, Mandeville, Manchester, Jamaica. For anything about your information, email <a href="mailto:info@blueemberja.com">info@blueemberja.com</a> or call <a href="tel:+18766302583">(876) 630-2583</a>.</p>
+
+          <h2 id="p-collect">What we collect</h2>
+          <h3>When you send us a project brief, an RSVP or a reprint request</h3>
+          <p>The Start a project form, the BizPlej RSVP and the client desk build a message containing what you entered: your name, company, phone number, the services you are interested in, your timeline and budget range, and any details you add. The site opens WhatsApp or your email app with that message ready. If you send it, we receive it in our WhatsApp account or our email inbox and use it only to reply to you, prepare a quote, manage your RSVP or fulfil your order.</p>
+          <h3>When you contact us directly</h3>
+          <p>If you call, message or email us, we receive whatever you choose to share, such as your number, email address and message.</p>
+          <h3>When you simply visit</h3>
+          <p>Like every website, our hosting provider automatically records basic technical details of each request, such as your IP address, browser type, the page requested and the time. These logs are used to keep the site running and secure. We do not use them to identify or profile visitors.</p>
+
+          <h2 id="p-device">What is stored on your device</h2>
+          <p>We store two small notes in your browser. Neither is a cookie, neither contains personal information, and neither is ever sent to us.</p>
+          <ul>
+            <li><b>be-loaded</b> (session storage) remembers that the opening animation has played, so it does not replay on every page. It is erased when you close the tab.</li>
+            <li><b>be-tour-seen</b> (local storage) remembers that the site tour has been shown, so it does not open again. You can remove it by clearing your browser's site data.</li>
+          </ul>
+
+          <h2 id="p-third">Third parties</h2>
+          <p>We do not sell or share your information. Some features rely on other companies, which process data under their own privacy policies:</p>
+          <ul>
+            <li><b>Hosting.</b> The site is hosted by Vercel Inc. or Render Services, Inc., which keep the request logs described above.</li>
+            <li><b>WhatsApp</b> (Meta Platforms). Used when you choose to send a brief, RSVP or reprint request by WhatsApp, or tap a WhatsApp link.</li>
+            <li><b>Your email provider and ours.</b> Used when you choose to send something by email.</li>
+            <li><b>YouTube</b> (Google). Some case studies include videos. When you open one of those case studies, preview images load from YouTube's servers. The video itself only loads if you tap play, and uses YouTube's privacy-enhanced mode.</li>
+            <li><b>Our previous website.</b> If an image fails to load from this site, your browser may fetch the original from blueemberja.com instead.</li>
+            <li><b>Links you click.</b> Instagram, Facebook, YouTube, LinkedIn and Google Maps only receive information if you follow a link to them.</li>
+          </ul>
+
+          <h2 id="p-ai">Where AI is used</h2>
+          <ul>
+            <li>This website was designed and built with the help of AI tools, including Claude by Anthropic.</li>
+            <li>Some decorative illustrations on the site were created with AI image tools.</li>
+            <li>No AI system runs on this site for visitors. There is no chatbot, and nothing you type is sent to an AI service, read by one, or used to train one.</li>
+          </ul>
+
+          <h2 id="p-uploads">Uploads and file storage</h2>
+          <p>This website does not currently accept file uploads.</p>
+          <p>If we add uploads in future, for example artwork for the client desk, files will be kept in a storage bucket that is <b>publicly accessible</b>. That means anyone who has the link to a file can open it. Please do not upload confidential documents or personal identification. You can ask us to delete any file you have uploaded by emailing <a href="mailto:info@blueemberja.com">info@blueemberja.com</a>, and we will delete it within 30 days and confirm when it is done.</p>
+
+          <h2 id="p-keep">How long we keep things</h2>
+          <p>Briefs, RSVPs and messages stay in our WhatsApp and email accounts for as long as we need them to work with you, and are deleted on request. Hosting logs are kept for the short period set by our hosting provider. The two browser notes stay on your device until you clear them or, for be-loaded, close the tab.</p>
+
+          <h2 id="p-security">Security</h2>
+          <p>The site is served only over encrypted HTTPS connections. It sets strict browser security rules that block scripts from other sources, it checks and cleans everything typed into its forms, and it has no database or login that could be broken into. No method of transmission or storage is completely secure, so please share only what we need to help you.</p>
+
+          <h2 id="p-rights">Your rights</h2>
+          <p>Under Jamaica's Data Protection Act, 2020, you can ask us what information we hold about you, ask us to correct it, ask us to stop using it, and ask us to delete it. Email <a href="mailto:info@blueemberja.com">info@blueemberja.com</a> and we will respond within 30 days. If you are not satisfied with our response, you can contact the Office of the Information Commissioner of Jamaica.</p>
+
+          <h2 id="p-changes">Changes and contact</h2>
+          <p>If this policy changes, we will update this page and the date at the top. Questions go to <a href="mailto:info@blueemberja.com">info@blueemberja.com</a> or Blue Ember Concepts Ltd., Shop 1, Ward Plaza, 35 Ward Avenue, Mandeville, Manchester, Jamaica.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <canvas class="flame" data-flame data-intensity="0.8" aria-hidden="true"></canvas>
+    <div class="wrap footer-top">
+      <img class="footer-logo" src="logo.svg" alt="Blue Ember Concepts" width="128" height="128" data-flame-anchor>
+      <p class="footer-cta">Let’s frustrate tradition together.</p>
+      <div class="hero-actions footer-actions">
+        <a href="index.html#start" class="btn btn-flame">Start a project</a>
+        <a href="https://wa.me/18764251995" class="btn btn-ghost" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Visit</h3>
+        <address>Shop 1, Ward Plaza<br>35 Ward Avenue, Mandeville<br>Manchester, Jamaica</address>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="tel:+18766302583">(876) 630-2583</a></li>
+          <li><a href="https://wa.me/18764251995" target="_blank" rel="noopener">WhatsApp (876) 425-1995</a></li>
+          <li><a href="mailto:info@blueemberja.com">info@blueemberja.com</a></li>
+          <li><a href="mailto:project@blueemberja.com">project@blueemberja.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="footer-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="bizplej.html">BizPlej</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/blueemberconcepts/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/blueemberconcepts/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/BlueEmberConcepts" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/nelton-bella-johnson-7ba29314/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <p>© <span id="year"></span> Blue Ember Concepts Ltd.</p>
+      <a class="link-btn" href="privacy.html">Privacy</a>
+      <a class="link-btn" href="terms.html">Terms</a>
+      <a class="link-btn" href="index.html#tour" id="openTour">Take the site tour</a>
+      <a class="link-btn" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/18764251995?text=Hi%20Blue%20Ember%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="Chat with Blue Ember on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-bar">
+      <span class="drawer-grip" aria-hidden="true"></span>
+      <button class="icon-btn" data-close aria-label="Close project">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <button class="icon-btn lb-close" data-close aria-label="Close viewer">×</button>
+    <button class="lb-nav lb-prev" data-lb="-1" aria-label="Previous image">‹</button>
+    <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav lb-next" data-lb="1" aria-label="Next image">›</button>
+  </dialog>
+
+</body>
+</html>

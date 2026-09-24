@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Terms of Service | Blue Ember Concepts</title>
+  <script>
+    /* Runs before anything else on the page:
+       1. Show the intro loader once per visit.
+       2. Image fallback chain (local WebP -> original -> backup). It must exist before
+          the first <img> starts loading, or a fast failure would be missed. */
+    (function () {
+      var root = document.documentElement;
+      try { root.classList.add(sessionStorage.getItem("be-loaded") ? "no-loader" : "is-loading"); }
+      catch (e) { root.classList.add("no-loader"); }
+      document.addEventListener("error", function (e) {
+        var el = e.target;
+        if (el.tagName !== "IMG" || !el.dataset.fallback) return;
+        var list = el.dataset.fallback.split("|"), next = list.shift();
+        if (list.length) el.dataset.fallback = list.join("|"); else el.removeAttribute("data-fallback");
+        el.dataset.retrying = "1";
+        el.removeAttribute("srcset");   // otherwise the browser keeps retrying the missing srcset file
+        el.src = next;
+      }, true);
+      // Photos ease in once fully downloaded, instead of painting in line by line.
+      document.addEventListener("load", function (e) {
+        if (e.target.tagName === "IMG") e.target.classList.add("is-in");
+      }, true);
+    })();
+  </script>
+  <meta name="description" content="The terms for using the Blue Ember Concepts website, including briefs, quotes, BizPlej reservations, the client desk and uploads.">
+  <meta name="theme-color" content="#081A2E">
+  <meta property="og:title" content="Terms of Service | Blue Ember Concepts">
+  <meta property="og:description" content="The terms for using the Blue Ember Concepts website, including briefs, quotes, BizPlej reservations, the client desk and uploads.">
+  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="press-progress" aria-hidden="true"></div>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand" aria-label="Blue Ember Concepts home">
+        <img class="brand-logo" src="logo.svg" alt="" width="36" height="36">
+        <span class="brand-name">Blue Ember</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">Studio</a>
+        <a href="bizplej.html">BizPlej</a>
+        <a href="index.html#desk">Client desk</a>
+        <a href="index.html#start" class="btn btn-flame nav-cta">Start a project</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero legal-hero">
+      <canvas class="flame" data-flame aria-hidden="true"></canvas>
+      <div class="wrap page-hero-inner">
+        <h1 class="page-title" style="--chars:5">Terms</h1>
+        <p class="hero-lede">The rules for using this website. Last updated 23 September 2026.</p>
+      </div>
+    </section>
+
+    <section class="section legal">
+      <div class="wrap legal-grid">
+        <nav class="legal-toc" aria-label="On this page">
+          <p>On this page</p>
+          <ol>
+            <li><a href="#t-agree">Using this site</a></li>
+            <li><a href="#t-work">Our work and trademarks</a></li>
+            <li><a href="#t-quotes">Briefs, quotes and prices</a></li>
+            <li><a href="#t-bizplej">BizPlej reservations</a></li>
+            <li><a href="#t-desk">Client desk and reorders</a></li>
+            <li><a href="#t-uploads">Uploads</a></li>
+            <li><a href="#t-conduct">Acceptable use</a></li>
+            <li><a href="#t-links">Other websites</a></li>
+            <li><a href="#t-liability">Liability</a></li>
+            <li><a href="#t-law">Governing law and changes</a></li>
+          </ol>
+        </nav>
+
+        <article class="legal-body">
+          <h2 id="t-agree">Using this site</h2>
+          <p>This website is run by Blue Ember Concepts Ltd. of Mandeville, Jamaica. By using it you agree to these terms and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use the site.</p>
+
+          <h2 id="t-work">Our work and trademarks</h2>
+          <p>The design, text, illustrations and code of this website belong to Blue Ember Concepts Ltd. The portfolio shows work we created for our clients. Client names, logos and brands, including Ironade, Wisynco, Sutherland, the Universal Service Fund and Manchester Co-operative Credit Union, belong to their owners and appear here only to show our work. You may share links to this site, but you may not copy, reuse or sell its content or the portfolio pieces without written permission.</p>
+
+          <h2 id="t-quotes">Briefs, quotes and prices</h2>
+          <p>Sending a project brief is a request for us to get in touch. It does not create a contract. Budget ranges on this site help us understand your project and are not prices or offers. Every project begins only once we have agreed a written quote or agreement with you, and that agreement's terms apply to the work.</p>
+
+          <h2 id="t-bizplej">BizPlej reservations</h2>
+          <p>An RSVP tells us you would like to attend. Your place is confirmed only when we confirm it with you directly. Dates, venues and guest numbers may change, and we will let confirmed guests know.</p>
+
+          <h2 id="t-desk">Client desk and reorders</h2>
+          <p>The client desk shown on this site is a preview using sample information. When it is live, a reprint request is a request, not an order: we confirm the price, quantity and timing with you before anything is produced.</p>
+
+          <h2 id="t-uploads">Uploads</h2>
+          <p>The site does not currently accept uploads. If uploads are added, you must own or have permission to use anything you upload, and uploaded files will be stored in publicly accessible storage as explained in our <a href="privacy.html#p-uploads">Privacy Policy</a>. You can ask us to delete your uploads at any time.</p>
+
+          <h2 id="t-conduct">Acceptable use</h2>
+          <p>Please do not use this site to send spam, false or offensive messages, or material you do not have the right to share. Do not try to break, overload, probe for weaknesses in, or interfere with the site or the people who use it.</p>
+
+          <h2 id="t-links">Other websites</h2>
+          <p>Links to WhatsApp, social networks, YouTube and Google Maps take you to services we do not control. Their own terms and privacy policies apply there.</p>
+
+          <h2 id="t-liability">Liability</h2>
+          <p>We work to keep this site accurate and available, but it is provided as it is, and it may occasionally be unavailable or contain mistakes. To the extent the law allows, Blue Ember Concepts Ltd. is not liable for any loss arising from use of this website. Nothing in these terms limits any rights you have by law that cannot be limited.</p>
+
+          <h2 id="t-law">Governing law and changes</h2>
+          <p>These terms are governed by the laws of Jamaica, and the courts of Jamaica have jurisdiction over any dispute. If we change these terms, we will update this page and the date at the top. Questions go to <a href="mailto:info@blueemberja.com">info@blueemberja.com</a>.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <canvas class="flame" data-flame data-intensity="0.8" aria-hidden="true"></canvas>
+    <div class="wrap footer-top">
+      <img class="footer-logo" src="logo.svg" alt="Blue Ember Concepts" width="128" height="128" data-flame-anchor>
+      <p class="footer-cta">Let’s frustrate tradition together.</p>
+      <div class="hero-actions footer-actions">
+        <a href="index.html#start" class="btn btn-flame">Start a project</a>
+        <a href="https://wa.me/18764251995" class="btn btn-ghost" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Visit</h3>
+        <address>Shop 1, Ward Plaza<br>35 Ward Avenue, Mandeville<br>Manchester, Jamaica</address>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="tel:+18766302583">(876) 630-2583</a></li>
+          <li><a href="https://wa.me/18764251995" target="_blank" rel="noopener">WhatsApp (876) 425-1995</a></li>
+          <li><a href="mailto:info@blueemberja.com">info@blueemberja.com</a></li>
+          <li><a href="mailto:project@blueemberja.com">project@blueemberja.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="footer-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="bizplej.html">BizPlej</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/blueemberconcepts/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/blueemberconcepts/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/BlueEmberConcepts" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/nelton-bella-johnson-7ba29314/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <p>© <span id="year"></span> Blue Ember Concepts Ltd.</p>
+      <a class="link-btn" href="privacy.html">Privacy</a>
+      <a class="link-btn" href="terms.html">Terms</a>
+      <a class="link-btn" href="index.html#tour" id="openTour">Take the site tour</a>
+      <a class="link-btn" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/18764251995?text=Hi%20Blue%20Ember%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="Chat with Blue Ember on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-bar">
+      <span class="drawer-grip" aria-hidden="true"></span>
+      <button class="icon-btn" data-close aria-label="Close project">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <button class="icon-btn lb-close" data-close aria-label="Close viewer">×</button>
+    <button class="lb-nav lb-prev" data-lb="-1" aria-label="Previous image">‹</button>
+    <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav lb-next" data-lb="1" aria-label="Next image">›</button>
+  </dialog>
+
+</body>
+</html>

@@ -3,12 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "images": "node tools/optimize-images.mjs"
+    "images": "node tools/optimize-images.mjs",
+    "audit": "npm audit --audit-level=moderate",
+    "check": "node tools/check-csp.mjs"
   },
   "devDependencies": {
-    "sharp": "^0.34.0"
-  },
-  "dependencies": {
-    "puppeteer": "^24.43.1"
+    "sharp": "^0.35.4"
   }
 }
