@@ -1047,6 +1047,29 @@ body { counter-reset: plate; }
   padding: 0.32rem 0.5rem; opacity: 0.8; pointer-events: none;
 }
 
+/* ---------- Mobile polish: legibility, tap comfort, rhythm ---------- */
+@media (max-width: 700px) {
+  /* keep the smallest text readable on phones */
+  .ph-post { font-size: 12px; line-height: 1.45; }
+  .ph-avatar { font-size: 11px; }
+  .ph-status { font-size: 12px; }
+  .compare-hint { font-size: .74rem; letter-spacing: .26em; }
+  .brief-steps li { font-size: .84rem; }
+  .clients-eyebrow { font-size: .78rem; letter-spacing: .22em; }
+  .stats-grid span { font-size: .84rem; }
+  .hint { font-size: .84rem; }
+  /* comfortable tap rows */
+  .footer-links a, .start-contact a, .studio-link a, .site-footer a:not(.btn), .visit-list a { display: inline-block; padding-block: .45rem; }
+  .dim-seen button { padding-block: .45rem; }
+  .tour .icon-btn { width: 44px; height: 44px; }
+  /* tighter single-column rhythm */
+  .desk-grid { gap: 2.25rem; }
+  .studio-grid, .start-grid { gap: 2.25rem; }
+  /* hero actions: full-width, stacked, thumb-friendly */
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+}
+
 /* ---------- Motion preferences ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
