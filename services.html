@@ -4,17 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Services | Blue Ember Concepts</title>
-  <meta name="description" content="Design, digital, display and decor from Blue Ember Concepts: identity, campaigns, signage and spaces for Jamaican businesses.">
-  <meta name="theme-color" content="#081A2E">
-  <meta property="og:title" content="Services | Blue Ember Concepts">
-  <meta property="og:description" content="Design, digital, display and decor from Blue Ember Concepts: identity, campaigns, signage and spaces for Jamaican businesses.">
-  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preload" href="fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
   <script>
     /* Runs before anything else on the page:
        1. Show the intro loader once per visit.
@@ -30,10 +19,26 @@
         var list = el.dataset.fallback.split("|"), next = list.shift();
         if (list.length) el.dataset.fallback = list.join("|"); else el.removeAttribute("data-fallback");
         el.dataset.retrying = "1";
+        el.removeAttribute("srcset");   // otherwise the browser keeps retrying the missing srcset file
         el.src = next;
+      }, true);
+      // Photos ease in once fully downloaded, instead of painting in line by line.
+      document.addEventListener("load", function (e) {
+        if (e.target.tagName === "IMG") e.target.classList.add("is-in");
       }, true);
     })();
   </script>
+  <meta name="description" content="Design, digital, display and decor from Blue Ember Concepts: identity, campaigns, signage and spaces for Jamaican businesses.">
+  <meta name="theme-color" content="#081A2E">
+  <meta property="og:title" content="Services | Blue Ember Concepts">
+  <meta property="og:description" content="Design, digital, display and decor from Blue Ember Concepts: identity, campaigns, signage and spaces for Jamaican businesses.">
+  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div class="press-progress" aria-hidden="true"></div>
@@ -83,7 +88,7 @@
       <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-logo" style="top: 3%; left: 50%; transform: translateX(-50%); width: clamp(180px, 20vw, 300px); aspect-ratio: 1; opacity: 0.07;"></div></div>
       <div class="wrap page-hero-inner">
         <h1 class="page-title" style="--chars:8">Services</h1>
-        <div class="fan page-fan" data-speed="-0.05" role="group" aria-label="Featured pieces"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-Sale-Sheet_bleed-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Sale-Sheet_bleed.jpg" alt="Ironade sale sheet" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-observer-ad-new-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-observer-ad-new.jpg" alt="Universal Service Fund Observer ad" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553.jpg" alt="Ironade feather and pull-up banners" loading="lazy" decoding="async"></a></div>
+        <div class="fan page-fan" data-speed="-0.05" role="group" aria-label="Featured pieces"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img fetchpriority="low" src="img/Ironade-Sale-Sheet_bleed-640.webp" srcset="img/Ironade-Sale-Sheet_bleed-320.webp 320w, img/Ironade-Sale-Sheet_bleed-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Sale-Sheet_bleed.jpg" alt="Ironade sale sheet" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img fetchpriority="low" src="img/USF-observer-ad-new-640.webp" srcset="img/USF-observer-ad-new-320.webp 320w, img/USF-observer-ad-new-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-observer-ad-new.jpg" alt="Universal Service Fund Observer ad" decoding="async"></a><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553-640.webp" srcset="img/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553-320.webp 320w, img/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade_Feather-Pull-Up-Banner-Proposal-1200x1553.jpg" alt="Ironade feather and pull-up banners" decoding="async"></a></div>
         <p class="hero-lede">Design, Digital, Display and Decor under one roof, so your brand looks like one company everywhere a customer meets it.</p>
       </div>
     </section>
@@ -99,7 +104,6 @@
     </nav>
 
     <section class="svc has-ghost" id="design" aria-labelledby="design-h">
-      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: -9vw; right: -7vw; width: clamp(240px, 26vw, 400px); aspect-ratio: 1; opacity: 0.09;"></div></div>
       <div class="wrap svc-grid">
         <header class="svc-head">
           <h2 id="design-h" class="svc-title"><span class="dim-d">D</span>esign</h2>
@@ -110,7 +114,7 @@
         <div class="svc-detail">
           <h3>What is included</h3>
           <ul class="svc-list"><li>Logo and identity systems</li><li>Colour palettes and brand guidelines</li><li>Print campaigns and posters</li><li>Sale sheets and brochures</li><li>Packaging and labels</li><li>Promotional items</li></ul>
-          <div class="fan svc-fan" data-speed="-0.05" role="group" aria-label="esign work"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-12-X-18-Poster_Wild-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-12-X-18-Poster_Wild.jpg" alt="Ironade wild berry poster" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-Gleaner-Ad-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-Gleaner-Ad.jpg" alt="Universal Service Fund Gleaner ad" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-mccu" data-open-project="mccu"><img src="img/4x6-Car-Loan-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/4x6-Car-Loan.jpg" alt="Manchester Co-op car loan flyer" loading="lazy" decoding="async"></a></div><p class="dim-seen svc-seen">Seen in <button data-open-project="ironade">Ironade</button>, <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="mccu">Manchester Co-op</button></p>
+          <div class="fan svc-fan" data-speed="-0.05" role="group" aria-label="esign work"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-12-X-18-Poster_Wild-640.webp" srcset="img/Ironade-12-X-18-Poster_Wild-320.webp 320w, img/Ironade-12-X-18-Poster_Wild-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-12-X-18-Poster_Wild.jpg" alt="Ironade wild berry poster" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-Gleaner-Ad-640.webp" srcset="img/USF-Gleaner-Ad-320.webp 320w, img/USF-Gleaner-Ad-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-Gleaner-Ad.jpg" alt="Universal Service Fund Gleaner ad" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-mccu" data-open-project="mccu"><img src="img/4x6-Car-Loan-640.webp" srcset="img/4x6-Car-Loan-320.webp 320w, img/4x6-Car-Loan-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/4x6-Car-Loan.jpg" alt="Manchester Co-op car loan flyer" loading="lazy" decoding="async"></a></div><p class="dim-seen svc-seen">Seen in <button data-open-project="ironade">Ironade</button>, <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="mccu">Manchester Co-op</button></p>
         </div>
       </div>
     </section>
@@ -133,7 +137,6 @@
     </section>
 
     <section class="svc has-ghost" id="display" aria-labelledby="display-h">
-      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: -9vw; right: -7vw; width: clamp(240px, 26vw, 400px); aspect-ratio: 1; opacity: 0.09;"></div></div>
       <div class="wrap svc-grid">
         <header class="svc-head">
           <h2 id="display-h" class="svc-title"><span class="dim-d">D</span>isplay</h2>
@@ -144,13 +147,12 @@
         <div class="svc-detail">
           <h3>What is included</h3>
           <ul class="svc-list"><li>Billboards</li><li>Pull-up and feather banners</li><li>Vehicle wraps</li><li>Shelf hangers and lit towers</li><li>Event and training materials</li><li>Print production</li></ul>
-          <div class="fan svc-fan" data-speed="-0.05" role="group" aria-label="isplay work"><a class="fan-card" href="work.html#project-sutherland" data-open-project="sutherland"><img src="img/Southerland-Global5-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Southerland-Global5.jpg" alt="Sutherland print production" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/feather-banners-1200x1553-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/feather-banners-1200x1553.jpg" alt="Universal Service Fund feather banners" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-Lit-Tower-1200x1553-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Lit-Tower-1200x1553.jpg" alt="Ironade lit tower" loading="lazy" decoding="async"></a></div><p class="dim-seen svc-seen">Seen in <button data-open-project="sutherland">Sutherland</button>, <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="ironade">Ironade</button></p>
+          <div class="fan svc-fan" data-speed="-0.05" role="group" aria-label="isplay work"><a class="fan-card" href="work.html#project-sutherland" data-open-project="sutherland"><img src="img/Southerland-Global5-640.webp" srcset="img/Southerland-Global5-320.webp 320w, img/Southerland-Global5-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Southerland-Global5.jpg" alt="Sutherland print production" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/feather-banners-1200x1553-640.webp" srcset="img/feather-banners-1200x1553-320.webp 320w, img/feather-banners-1200x1553-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/feather-banners-1200x1553.jpg" alt="Universal Service Fund feather banners" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-Lit-Tower-1200x1553-640.webp" srcset="img/Ironade-Lit-Tower-1200x1553-320.webp 320w, img/Ironade-Lit-Tower-1200x1553-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Lit-Tower-1200x1553.jpg" alt="Ironade lit tower" loading="lazy" decoding="async"></a></div><p class="dim-seen svc-seen">Seen in <button data-open-project="sutherland">Sutherland</button>, <button data-open-project="usf">Universal Service Fund</button>, <button data-open-project="ironade">Ironade</button></p>
         </div>
       </div>
     </section>
 
     <section class="svc has-ghost" id="decor" aria-labelledby="decor-h">
-      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="bottom: -5vw; left: -6vw; width: clamp(240px, 26vw, 400px); aspect-ratio: 1; opacity: 0.09;"></div></div>
       <div class="wrap svc-grid">
         <header class="svc-head">
           <h2 id="decor-h" class="svc-title"><span class="dim-d">D</span>ecor</h2>
@@ -184,7 +186,6 @@
     </section>
 
     <section class="section faq has-ghost" id="faq" aria-labelledby="faq-h">
-      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: 4%; right: 3%; width: clamp(180px, 20vw, 320px); aspect-ratio: 1; opacity: 0.06;"></div></div>
       <div class="wrap">
         <header class="section-head">
           <h2 id="faq-h">Common questions</h2>
@@ -197,11 +198,11 @@
           </details>
           <details>
             <summary><span class="faq-q">Q2</span>How long does a project take?<span class="faq-x" aria-hidden="true"></span></summary>
-            <p class="faq-a">A flyer can turn around in days; a full brand takes weeks. We agree the timeline in writing at the brief stage, and you hear from us at every stage of the run, not just at the end.</p>
+            <p class="faq-a">A flyer can turn around in days; a full brand takes weeks. We agree the timeline in writing at the brief stage and keep you updated through each stage of the run.</p>
           </details>
           <details>
             <summary><span class="faq-q">Q3</span>Do you only work in Mandeville?<span class="faq-x" aria-hidden="true"></span></summary>
-            <p class="faq-a">Mandeville is home, but the work travels. We have delivered for clients across Jamaica, from Kingston hotels to parish credit unions, and production is handled under one roof either way.</p>
+            <p class="faq-a">Mandeville is home, but the work travels. We have delivered for clients across Jamaica, from resort brands to parish credit unions, and production is handled under one roof either way.</p>
           </details>
           <details>
             <summary><span class="faq-q">Q4</span>What should I bring to start?<span class="faq-x" aria-hidden="true"></span></summary>
@@ -272,6 +273,8 @@
     </div>
     <div class="wrap footer-base">
       <p>© <span id="year"></span> Blue Ember Concepts Ltd.</p>
+      <a class="link-btn" href="privacy.html">Privacy</a>
+      <a class="link-btn" href="terms.html">Terms</a>
       <a class="link-btn" href="index.html#tour" id="openTour">Take the site tour</a>
       <a class="link-btn" href="#top">Back to top</a>
     </div>
@@ -297,7 +300,5 @@
     <button class="lb-nav lb-next" data-lb="1" aria-label="Next image">›</button>
   </dialog>
 
-  <script src="data.js" defer></script>
-  <script src="main.js" defer></script>
 </body>
 </html>

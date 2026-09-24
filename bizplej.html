@@ -4,17 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BizPlej | Blue Ember Concepts</title>
-  <meta name="description" content="BizPlej is a corporate mingle hosted by Blue Ember Concepts in Mandeville. Share. Collaborate. Expand. Reserve your place.">
-  <meta name="theme-color" content="#081A2E">
-  <meta property="og:title" content="BizPlej | Blue Ember Concepts">
-  <meta property="og:description" content="BizPlej is a corporate mingle hosted by Blue Ember Concepts in Mandeville. Share. Collaborate. Expand. Reserve your place.">
-  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preload" href="fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
   <script>
     /* Runs before anything else on the page:
        1. Show the intro loader once per visit.
@@ -30,10 +19,26 @@
         var list = el.dataset.fallback.split("|"), next = list.shift();
         if (list.length) el.dataset.fallback = list.join("|"); else el.removeAttribute("data-fallback");
         el.dataset.retrying = "1";
+        el.removeAttribute("srcset");   // otherwise the browser keeps retrying the missing srcset file
         el.src = next;
+      }, true);
+      // Photos ease in once fully downloaded, instead of painting in line by line.
+      document.addEventListener("load", function (e) {
+        if (e.target.tagName === "IMG") e.target.classList.add("is-in");
       }, true);
     })();
   </script>
+  <meta name="description" content="BizPlej is a corporate mingle hosted by Blue Ember Concepts in Mandeville. Share. Collaborate. Expand. Reserve your place.">
+  <meta name="theme-color" content="#081A2E">
+  <meta property="og:title" content="BizPlej | Blue Ember Concepts">
+  <meta property="og:description" content="BizPlej is a corporate mingle hosted by Blue Ember Concepts in Mandeville. Share. Collaborate. Expand. Reserve your place.">
+  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div class="press-progress" aria-hidden="true"></div>
@@ -112,8 +117,8 @@
         </div>
         <form class="rsvp" id="rsvp" novalidate>
           <h3 id="rsvpTitle">Reserve your place</h3>
-          <label class="field"><span>Name</span><input name="name" autocomplete="name" required></label>
-          <label class="field"><span>Company</span><input name="company" autocomplete="organization" required></label>
+          <label class="field"><span>Name</span><input name="name" autocomplete="name" required maxlength="80"></label>
+          <label class="field"><span>Company</span><input name="company" autocomplete="organization" required maxlength="100"></label>
           <label class="field">
             <span>Guests</span>
             <select name="guests"><option>Just me</option><option>2 people</option><option>3 people</option><option>4 or more</option></select>
@@ -181,6 +186,8 @@
     </div>
     <div class="wrap footer-base">
       <p>© <span id="year"></span> Blue Ember Concepts Ltd.</p>
+      <a class="link-btn" href="privacy.html">Privacy</a>
+      <a class="link-btn" href="terms.html">Terms</a>
       <a class="link-btn" href="index.html#tour" id="openTour">Take the site tour</a>
       <a class="link-btn" href="#top">Back to top</a>
     </div>
@@ -206,7 +213,5 @@
     <button class="lb-nav lb-next" data-lb="1" aria-label="Next image">›</button>
   </dialog>
 
-  <script src="data.js" defer></script>
-  <script src="main.js" defer></script>
 </body>
 </html>

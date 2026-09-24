@@ -37,6 +37,32 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const waLink = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+
+/* ---------- Input hygiene ----------
+   Nothing typed here reaches a server or a database: forms build a WhatsApp
+   message or an email. Even so, input is cleaned before use:
+   - clean() strips invisible control and direction-override characters
+     (used to disguise text), collapses spacing and caps the length;
+   - pick() only accepts values from a known list, because anyone can edit
+     a checkbox or dropdown value in their browser's dev tools;
+   - anything shown back on the page goes through esc() first. */
+const clean = (v, max = 120) => String(v ?? "")
+  .normalize("NFC")
+  .replace(/[\u0000-\u0009\u000B-\u001F\u007F-\u009F\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, "")
+  .replace(/[ \t]+/g, " ")
+  .replace(/\n{3,}/g, "\n\n")
+  .trim()
+  .slice(0, max);
+const pick = (v, allowed) => (allowed.includes(v) ? v : "");
+// Accepts how people really type numbers: (876) 555-0199, 876.555.0199, +1 876 555 0199
+const validPhone = (v) => /^[+(]?[\d\s().-]+$/.test(v) && (v.replace(/\D/g, "").length >= 7 && v.replace(/\D/g, "").length <= 15);
+const OPTIONS = {
+  services: ["Design", "Digital", "Display", "Decor"],
+  type: ["New brand", "Brand refresh", "Campaign", "Event", "Space or fit-out"],
+  timeline: ["Within 2 weeks", "Within a month", "1 to 3 months", "Flexible"],
+  budget: ["Under $250,000", "$250,000 to $750,000", "$750,000 to $2M", "Over $2M", "Not sure yet"],
+  guests: ["Just me", "2 people", "3 people", "4 or more"],
+};
 const storage = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
   set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage unavailable */ } },
@@ -410,9 +436,10 @@ function initBrief() {
   const values = () => {
     const d = new FormData(form);
     return {
-      services: d.getAll("services"), type: d.get("type") || "", timeline: d.get("timeline") || "",
-      details: (d.get("details") || "").trim(), budget: d.get("budget") || "",
-      name: (d.get("name") || "").trim(), company: (d.get("company") || "").trim(), phone: (d.get("phone") || "").trim(),
+      services: d.getAll("services").filter((s) => OPTIONS.services.includes(s)),
+      type: pick(d.get("type"), OPTIONS.type), timeline: pick(d.get("timeline"), OPTIONS.timeline),
+      budget: pick(d.get("budget"), OPTIONS.budget), details: clean(d.get("details"), 600),
+      name: clean(d.get("name"), 80), company: clean(d.get("company"), 100), phone: clean(d.get("phone"), 20),
     };
   };
 
@@ -420,7 +447,7 @@ function initBrief() {
     1: (v) => v.services.length ? "" : "Choose at least one service to continue.",
     2: (v) => !v.type ? "Choose the type of project." : !v.timeline ? "Choose a timeline." : "",
     3: (v) => v.budget ? "" : "Choose a budget range, or pick “Not sure yet”.",
-    4: (v) => !v.name ? "Add your name so we know who to reply to." : v.phone.replace(/\D/g, "").length < 7 ? "Add a phone or WhatsApp number we can reach." : "",
+    4: (v) => !v.name ? "Add your name so we know who to reply to." : !validPhone(v.phone) ? "Add a phone or WhatsApp number we can reach." : "",
   };
 
   const summary = (v) => `
@@ -572,11 +599,11 @@ function initBizplej() {
   $("#rsvp").addEventListener("submit", (e) => {
     e.preventDefault();
     const d = new FormData(e.target);
-    const name = (d.get("name") || "").trim(), company = (d.get("company") || "").trim();
+    const name = clean(d.get("name"), 80), company = clean(d.get("company"), 100), guests = pick(d.get("guests"), OPTIONS.guests) || "Just me";
     const err = $("#rsvpError");
     if (!name || !company) { err.textContent = "Add your name and company to reserve."; return; }
     err.textContent = "";
-    window.open(waLink(`BizPlej RSVP\n\nName: ${name}\nCompany: ${company}\nGuests: ${d.get("guests")}`), "_blank", "noopener");
+    window.open(waLink(`BizPlej RSVP\n\nName: ${name}\nCompany: ${company}\nGuests: ${guests}`), "_blank", "noopener");
   });
 }
 
@@ -724,26 +751,28 @@ function initSubnav() {
 function initLoader() {
   const root = document.documentElement;
   const el = $("#loader");
-  if (!el) return;
+  if (!el) { root.classList.remove("is-loading"); return; } // pages without the intro (legal pages) open straight away
   if (!root.classList.contains("is-loading")) { el.remove(); return; }
 
   const flame = createFlame($(".loader-flame", el), { anchor: $(".loader-logo", el), intensity: 0.05 });
   const pctEl = $("#loaderPct");
 
   // What the first screen needs
+  // Only what the first impression needs: both fonts, the logo, and the front print.
+  // Decorative art, tickers and anything below the fold load quietly afterwards.
   const tasks = [
-    document.fonts.load('700 1em "Syne"'),
-    document.fonts.load('400 1em "Instrument Sans"'),
-    ...$$(".site-header img, .hero img, .page-hero img")
-      .filter((im) => im.getAttribute("src") && im.getBoundingClientRect().top < window.innerHeight) // first screen only
+    document.fonts.load('700 1em "Playfair Display"'),
+    document.fonts.load('400 1em "Raleway"'),
+    ...$$(".site-header img, .hero-fan .fan-card:last-child img, .page-fan .fan-card:last-child img")
+      .filter((im) => im.getAttribute("src"))
       .map(imageReady),
   ];
   let done = 0;
   tasks.forEach((p) => p.finally(() => done++));
 
-  const started = performance.now();
+  const started = 0; // performance.now() counts from when the visitor arrived, so the cap is real wall-clock time
   const MIN_MS = reducedMotion ? 300 : 1600;   // long enough to see the saber work
-  const MAX_MS = 12000;                        // on very slow connections, open anyway
+  const MAX_MS = 4500;                         // on very slow connections, open anyway; the rest streams in
   let shown = 0, finished = false;
 
   const tick = (now) => {
@@ -904,31 +933,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if ($("#tour")) initTour();
 });
 
-
-/* ===== Scroll reveals: sections settle onto the sheet (progressive, motion-safe) ===== */
-document.addEventListener("DOMContentLoaded", function () {
-  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var SELECTORS = [
-    ".section-head", ".dim", ".work-card", ".quote", ".svc",
-    ".stats-grid > div", ".visit-grid > div", ".client-grid > li",
-    ".svc-list > li", ".fact"
-  ];
-  var els = document.querySelectorAll(SELECTORS.join(", "));
-  if (!els.length) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      en.target.classList.add("in");
-      io.unobserve(en.target);
-    });
-  }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
-  els.forEach(function (el) {
-    el.classList.add("rv");
-    var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
-    if (sibs) el.style.setProperty("--rvd", Math.min(sibs, 5) * 70 + "ms");
-    io.observe(el);
-  });
-});
 
 /* ===== Active nav: the page you are on is underlined in the rule ===== */
 (function () {

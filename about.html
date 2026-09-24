@@ -4,17 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Studio | Blue Ember Concepts</title>
-  <meta name="description" content="Blue Ember Concepts is a Mandeville creative agency, frustrating tradition with creativity since 2005.">
-  <meta name="theme-color" content="#081A2E">
-  <meta property="og:title" content="Studio | Blue Ember Concepts">
-  <meta property="og:description" content="Blue Ember Concepts is a Mandeville creative agency, frustrating tradition with creativity since 2005.">
-  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preload" href="fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
   <script>
     /* Runs before anything else on the page:
        1. Show the intro loader once per visit.
@@ -30,10 +19,26 @@
         var list = el.dataset.fallback.split("|"), next = list.shift();
         if (list.length) el.dataset.fallback = list.join("|"); else el.removeAttribute("data-fallback");
         el.dataset.retrying = "1";
+        el.removeAttribute("srcset");   // otherwise the browser keeps retrying the missing srcset file
         el.src = next;
+      }, true);
+      // Photos ease in once fully downloaded, instead of painting in line by line.
+      document.addEventListener("load", function (e) {
+        if (e.target.tagName === "IMG") e.target.classList.add("is-in");
       }, true);
     })();
   </script>
+  <meta name="description" content="Blue Ember Concepts is a Mandeville creative agency, frustrating tradition with creativity since 2005.">
+  <meta name="theme-color" content="#081A2E">
+  <meta property="og:title" content="Studio | Blue Ember Concepts">
+  <meta property="og:description" content="Blue Ember Concepts is a Mandeville creative agency, frustrating tradition with creativity since 2005.">
+  <meta property="og:image" content="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div class="press-progress" aria-hidden="true"></div>
@@ -80,10 +85,10 @@
 
     <section class="hero page-hero">
       <canvas class="flame" data-flame aria-hidden="true"></canvas>
-      <div class="ghost-frame" aria-hidden="true"><img class="ghost-photo" src="img/ghost-owner.png" alt="" style="top: 3%; left: 30%; transform: translateX(-50%); width: clamp(300px, 30vw, 480px); opacity: 0.14;"></div>
+      <div class="ghost-frame" aria-hidden="true"><img class="ghost-photo" fetchpriority="low" src="img/ghost-owner.webp" alt="" style="top: 3%; left: 30%; transform: translateX(-50%); width: clamp(300px, 30vw, 480px); opacity: 0.14;"></div>
       <div class="wrap page-hero-inner">
         <h1 class="page-title" style="--chars:6">Studio</h1>
-        <div class="fan page-fan" data-speed="-0.05" role="group" aria-label="Featured pieces"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img src="img/Ironade-Concept-Posters_3-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_3.jpg" alt="Ironade concept poster" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-mccu" data-open-project="mccu"><img src="img/Anniversary-basket-updated-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Anniversary-basket-updated.jpg" alt="Manchester Co-op anniversary gift basket" loading="lazy" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-ad-CEO-640.webp" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-ad-CEO.jpg" alt="Universal Service Fund CEO feature ad" loading="lazy" decoding="async"></a></div>
+        <div class="fan page-fan" data-speed="-0.05" role="group" aria-label="Featured pieces"><a class="fan-card" href="work.html#project-ironade" data-open-project="ironade"><img fetchpriority="low" src="img/Ironade-Concept-Posters_3-640.webp" srcset="img/Ironade-Concept-Posters_3-320.webp 320w, img/Ironade-Concept-Posters_3-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Ironade-Concept-Posters_3.jpg" alt="Ironade concept poster" decoding="async"></a><a class="fan-card" href="work.html#project-mccu" data-open-project="mccu"><img fetchpriority="low" src="img/Anniversary-basket-updated-640.webp" srcset="img/Anniversary-basket-updated-320.webp 320w, img/Anniversary-basket-updated-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/Anniversary-basket-updated.jpg" alt="Manchester Co-op anniversary gift basket" decoding="async"></a><a class="fan-card" href="work.html#project-usf" data-open-project="usf"><img src="img/USF-ad-CEO-640.webp" srcset="img/USF-ad-CEO-320.webp 320w, img/USF-ad-CEO-640.webp 640w" sizes="(max-width: 700px) 42vw, 260px" data-fallback="https://blueemberja.com/wp-content/uploads/2018/04/USF-ad-CEO.jpg" alt="Universal Service Fund CEO feature ad" decoding="async"></a></div>
         <p class="hero-lede">A Mandeville creative agency, frustrating tradition with creativity since 2005.</p>
       </div>
     </section>
@@ -105,13 +110,12 @@
     </section>
 
     <section class="section has-ghost" aria-labelledby="how-h">
-      <div class="ghost-frame" aria-hidden="true"><div class="ghost ghost-disc" style="top: -3vw; right: -6vw; width: clamp(260px, 28vw, 420px); aspect-ratio: 1; opacity: 0.09;"></div></div>
       <div class="wrap">
         <header class="section-head">
           <h2 id="how-h">How we work</h2>
         </header>
         <div class="pillars">
-          <article><h3>Business first</h3><p>Every design decision is judged by what it does for your business, not only by how it looks.</p></article>
+          <article><h3>Business first</h3><p>Every design decision starts with what it needs to do for your business.</p></article>
           <article><h3>Outside the box</h3><p>We work best with companies that want something extraordinary, and we are not shy about pushing for it.</p></article>
           <article><h3>In it for the long run</h3><p>Clients stay with us for years because we support them across every medium as they grow.</p></article>
         </div>
@@ -130,7 +134,8 @@
     </section>
 
     <section class="section visit has-ghost" aria-labelledby="visit-h">
-      <div class="ghost-frame" aria-hidden="true"><img class="ghost-photo" src="img/ghost-bird.png" alt="" loading="lazy" style="bottom: -5vw; left: -3vw; width: clamp(260px, 28vw, 440px); opacity: 0.09;"></div>
+      <div class="ghost-frame" aria-hidden="true"><img class="ghost-photo" fetchpriority="low" src="img/ghost-ackee.webp" alt="" loading="lazy" style="top: 6%; right: 3%; width: clamp(200px, 22vw, 340px); opacity: 0.09;"></div>
+      <div class="ghost-frame" aria-hidden="true"><img class="ghost-photo" fetchpriority="low" src="img/ghost-bird.webp" alt="" loading="lazy" style="bottom: -5vw; left: -3vw; width: clamp(260px, 28vw, 440px); opacity: 0.09;"></div>
       <div class="wrap visit-grid">
         <div>
           <h2 id="visit-h">Visit the studio</h2>
@@ -193,6 +198,8 @@
     </div>
     <div class="wrap footer-base">
       <p>© <span id="year"></span> Blue Ember Concepts Ltd.</p>
+      <a class="link-btn" href="privacy.html">Privacy</a>
+      <a class="link-btn" href="terms.html">Terms</a>
       <a class="link-btn" href="index.html#tour" id="openTour">Take the site tour</a>
       <a class="link-btn" href="#top">Back to top</a>
     </div>
@@ -218,7 +225,5 @@
     <button class="lb-nav lb-next" data-lb="1" aria-label="Next image">›</button>
   </dialog>
 
-  <script src="data.js" defer></script>
-  <script src="main.js" defer></script>
 </body>
 </html>
