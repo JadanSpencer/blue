@@ -1173,18 +1173,19 @@ img.float-card.is-in { animation: img-in 0.45s var(--ease); }
 }
 
 /* ---------- The transformation: drag the handle ---------- */
-.compare-stage { position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--ink-2); box-shadow: 0 34px 90px rgba(2,8,16,.55); max-width: 1080px; margin-inline: auto; }
+.compare-stage { --cxc: clamp(32px, var(--cx, 50%), calc(100% - 32px)); position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--ink-2); box-shadow: 0 34px 90px rgba(2,8,16,.55); max-width: 1080px; margin-inline: auto; }
 .compare-stage > svg { display: block; width: 100%; height: auto; }
-.compare-after { position: absolute; inset: 0; clip-path: polygon(var(--cx, 50%) 0, 100% 0, 100% 100%, var(--cx, 50%) 100%); }
+.compare-after { position: absolute; inset: 0; clip-path: polygon(var(--cxc) 0, 100% 0, 100% 100%, var(--cxc) 100%); }
 .compare-after svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.compare-handle { position: absolute; top: 0; bottom: 0; left: var(--cx, 50%); width: 2px; margin-left: -1px; background: linear-gradient(180deg, transparent, var(--flame) 14%, var(--flame) 86%, transparent); pointer-events: none; box-shadow: 0 0 18px rgba(31,139,255,.55); }
+.compare-handle { position: absolute; top: 0; bottom: 0; left: var(--cxc); width: 3px; margin-left: -1.5px; background: linear-gradient(180deg, rgba(255,255,255,.35), #fff 14%, #fff 86%, rgba(255,255,255,.35)); pointer-events: none; box-shadow: 0 0 0 1px rgba(8,26,46,.35), 0 0 18px rgba(31,139,255,.8); z-index: 2; }
 .compare-grip {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: 54px; height: 54px; border-radius: 50%;
   background: var(--flame); display: flex; align-items: center; justify-content: center;
-  border: 2px solid var(--ink);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(8,26,46,.4), 0 8px 22px rgba(2,8,16,.55), 0 0 26px rgba(31,139,255,.7);
 }
-.compare-grip svg { width: 26px; height: 14px; display: block; }
+.compare-grip svg { width: 26px; height: 14px; display: block; stroke: #fff; }
 .compare-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; }
 .compare-tag {
   position: absolute; top: 16px; pointer-events: none;
@@ -1195,7 +1196,7 @@ img.float-card.is-in { animation: img-in 0.45s var(--ease); }
 .compare-stage:focus-within .compare-grip { outline: 2px solid var(--ice); outline-offset: 4px; }
 @media (prefers-reduced-motion: no-preference) {
   .compare-grip { animation: cmpNudge 3.2s var(--ease) infinite; }
-  @keyframes cmpNudge { 0%,100% { margin-left: -27px; } 50% { margin-left: -25px; } }
+  @keyframes cmpNudge { 0%,100% { translate: -3px 0; } 50% { translate: 3px 0; } }
 }
 
 
