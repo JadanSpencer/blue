@@ -282,58 +282,140 @@
     <circle cx="1080" cy="420" r="7" fill="#3d382e"/>
   </svg>
           <div class="compare-after" role="img" aria-label="The storefront after the Blue Ember redesign">
-            <svg viewBox="0 0 1200 640" role="img" aria-label="The same storefront after the Blue Ember redesign">
+            <svg viewBox="0 0 1200 640" role="img" aria-label="The same storefront rebuilt: a slatted two-storey facade, halo-lit sign, full-height glazing and a warm, open interior">
     <defs>
-      <linearGradient id="cmSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D2748"/><stop offset="1" stop-color="#081A2E"/></linearGradient>
-      <radialGradient id="cmGlow" cx="50%" cy="16%" r="75%"><stop offset="0" stop-color="#1F8BFF" stop-opacity=".22"/><stop offset="1" stop-color="#1F8BFF" stop-opacity="0"/></radialGradient>
-      <linearGradient id="cmFascia" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#123059"/><stop offset="1" stop-color="#0B2038"/></linearGradient>
-      <linearGradient id="cmGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F8BFF" stop-opacity=".16"/><stop offset=".55" stop-color="#123152" stop-opacity=".38"/><stop offset="1" stop-color="#0A1E36" stop-opacity=".58"/></linearGradient>
-      <radialGradient id="cmHalo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1F8BFF" stop-opacity=".28"/><stop offset="1" stop-color="#1F8BFF" stop-opacity="0"/></radialGradient>
-      <radialGradient id="cmSpill" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#1F8BFF" stop-opacity=".22"/><stop offset="1" stop-color="#1F8BFF" stop-opacity="0"/></radialGradient>
-      <linearGradient id="cmDoor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#123152"/><stop offset="1" stop-color="#0A1E36"/></linearGradient>
+      <linearGradient id="cmSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1F3A"/><stop offset="1" stop-color="#17406B"/></linearGradient>
+      <linearGradient id="cmNbr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1B2E"/><stop offset="1" stop-color="#0F2640"/></linearGradient>
+      <pattern id="cmSlats" width="14" height="20" patternUnits="userSpaceOnUse"><rect width="14" height="20" fill="#0A1829"/><rect x="2" width="9" height="20" fill="#16304E"/><rect x="2" width="2" height="20" fill="#1E3D60"/></pattern>
+      <linearGradient id="cmWash" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CDEBFF" stop-opacity=".22"/><stop offset=".55" stop-color="#CDEBFF" stop-opacity=".04"/><stop offset="1" stop-color="#CDEBFF" stop-opacity="0"/></linearGradient>
+      <linearGradient id="cmRoom" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A5270"/><stop offset=".5" stop-color="#22384F"/><stop offset="1" stop-color="#15263A"/></linearGradient>
+      <radialGradient id="cmWarm" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFE3B0" stop-opacity=".55"/><stop offset=".45" stop-color="#FFD08A" stop-opacity=".16"/><stop offset="1" stop-color="#FFD08A" stop-opacity="0"/></radialGradient>
+      <linearGradient id="cmGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CDEBFF" stop-opacity=".16"/><stop offset=".4" stop-color="#CDEBFF" stop-opacity=".03"/><stop offset="1" stop-color="#081A2E" stop-opacity=".28"/></linearGradient>
+      <linearGradient id="cmCone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6F3FF" stop-opacity=".2"/><stop offset="1" stop-color="#E6F3FF" stop-opacity="0"/></linearGradient>
+      <radialGradient id="cmPool" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFE3B0" stop-opacity=".3"/><stop offset="1" stop-color="#FFE3B0" stop-opacity="0"/></radialGradient>
+      <linearGradient id="cmPave" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12304F"/><stop offset="1" stop-color="#081A2E"/></linearGradient>
+      <linearGradient id="cmCounter" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1ECE2"/><stop offset="1" stop-color="#B9B3A6"/></linearGradient>
+      <filter id="cmBlur" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+      <filter id="cmSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+      <clipPath id="cmBays"><rect x="146" y="246" width="388" height="302"/><rect x="566" y="246" width="368" height="302"/><rect x="987" y="248" width="116" height="304"/></clipPath>
     </defs>
+
+    <!-- dusk sky + neighbours -->
     <rect width="1200" height="640" fill="url(#cmSky)"/>
-    <rect width="1200" height="640" fill="url(#cmGlow)"/>
-    <g fill="#5AB0FF" opacity=".3"><circle cx="1040" cy="80" r="4"/><circle cx="1082" cy="120" r="3"/><circle cx="1002" cy="122" r="3"/><circle cx="1122" cy="72" r="2.4"/><circle cx="1062" cy="52" r="2.4"/></g>
-    <rect y="560" width="1200" height="80" fill="#0A2238"/>
-    <rect y="560" width="1200" height="4" fill="#1F8BFF" opacity=".8"/>
-    <g stroke="#123152" opacity=".6" stroke-width="2"><path d="M200 588h180M480 612h220M860 588h160M60 620h140M1010 616h120"/></g>
-    <ellipse cx="330" cy="563" rx="210" ry="20" fill="url(#cmSpill)"/>
-    <ellipse cx="750" cy="563" rx="230" ry="20" fill="url(#cmSpill)"/>
-    <ellipse cx="1045" cy="563" rx="90" ry="16" fill="url(#cmSpill)"/>
-    <rect x="90" y="70" width="1020" height="130" fill="url(#cmFascia)" stroke="#1F8BFF" stroke-width="2"/>
-    <rect x="99" y="79" width="1002" height="112" fill="none" stroke="#CDEBFF" stroke-opacity=".16"/>
-    <path d="M106 56v14M106 56h14M1094 56h14M1108 56v14M106 200v14M106 214h14M1094 214h14M1108 200v14" stroke="#1F8BFF" stroke-width="1.5" opacity=".55" fill="none"/>
-    <text x="600" y="152" text-anchor="middle" font-family="'Playfair Display', serif" font-size="82" fill="#0A1E36" opacity=".55">Mandeville</text>
-    <text x="600" y="148" text-anchor="middle" font-family="'Playfair Display', serif" font-size="82" fill="#F5EFE3">Mandeville</text>
-    <text x="600" y="182" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="24" letter-spacing="16" fill="#1F8BFF">BAKERY</text>
-    <rect x="330" y="192" width="540" height="2" fill="#5AB0FF" opacity=".7"/>
-    <rect x="130" y="528" width="400" height="12" rx="2" fill="#123152"/>
-    <rect x="550" y="528" width="400" height="12" rx="2" fill="#123152"/>
-    <rect x="140" y="240" width="380" height="290" fill="#0E2340" stroke="#1F8BFF" stroke-opacity=".45" stroke-width="2"/>
-    <rect x="140" y="240" width="380" height="290" fill="url(#cmGlass)"/>
-    <rect x="560" y="240" width="380" height="290" fill="#0E2340" stroke="#1F8BFF" stroke-opacity=".45" stroke-width="2"/>
-    <rect x="560" y="240" width="380" height="290" fill="url(#cmGlass)"/>
-    <path d="M180 500 420 260" stroke="#CDEBFF" stroke-opacity=".07" stroke-width="24" fill="none"/>
-    <path d="M215 505 455 265" stroke="#CDEBFF" stroke-opacity=".05" stroke-width="10" fill="none"/>
-    <path d="M258 512 498 272" stroke="#CDEBFF" stroke-opacity=".13" stroke-width="2.5" fill="none"/>
-    <path d="M600 500 840 260" stroke="#CDEBFF" stroke-opacity=".06" stroke-width="20" fill="none"/>
-    <ellipse cx="350" cy="472" rx="90" ry="24" fill="#5AB0FF" opacity=".06"/>
-    <rect x="230" y="290" width="200" height="200" fill="#081A2E" stroke="#1F8BFF" stroke-opacity=".55" stroke-width="1.5"/>
-    <path d="M240 282v8M240 282h8M420 282h8M428 282v8M240 490v8M240 498h8M428 490v8M420 498h8" stroke="#1F8BFF" stroke-width="1" opacity=".5" fill="none"/>
-    <text x="330" y="360" text-anchor="middle" font-family="'Playfair Display', serif" font-size="30" fill="#F5EFE3">Daily</text>
-    <text x="330" y="392" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="16" letter-spacing="6" fill="#1F8BFF">FROM 6AM</text>
-    <rect x="300" y="412" width="60" height="2" fill="#1F8BFF" opacity=".6"/>
-    <text x="330" y="452" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="13" letter-spacing="3" fill="#8fa4bd">HARD DOUGH &#8226; COCOA BREAD</text>
-    <circle cx="750" cy="328" r="105" fill="url(#cmHalo)"/>
-    <g id="cmFlame" transform="translate(670 245) scale(1.6)" fill="#1F8BFF"><path d="M46.3 3.5 C45.3 3.5 43.4 3.8 42.3 4 C41.7 4.1 40.6 4.3 39.8 4.4 C39 4.6 38 4.8 37.5 5 C37 5.1 36.2 5.4 35.7 5.5 C35.1 5.6 34.4 5.9 33.9 6.1 C33.5 6.3 32.9 6.5 32.6 6.6 C32.3 6.7 31.6 6.9 31.2 7.1 C30.7 7.4 30.1 7.6 29.8 7.7 C29.6 7.8 29.1 8 28.8 8.2 C28.5 8.4 28.1 8.6 27.8 8.7 C27.5 8.9 27.1 9.1 26.8 9.3 C26.6 9.4 26.1 9.7 25.9 9.8 C24 10.8 20 13.7 17.5 16.2 C13.6 19.8 9.2 25.8 7.6 29.6 C7.5 29.8 7.3 30.3 7.1 30.6 C6.9 30.9 6.7 31.4 6.6 31.8 C6.5 32.1 6.2 32.7 6.1 33.1 C5.9 33.4 5.6 34.1 5.5 34.5 C5.4 35 5.2 35.7 5 36.2 C4.8 36.6 4.6 37.4 4.5 37.9 C4.4 38.5 4.2 39.4 4 39.9 C3.4 42 3 45.6 3 49 C3 51.9 3.1 52 5.2 50.3 C5.6 50 6.1 49.6 6.3 49.5 C6.4 49.4 6.9 49.1 7.4 48.8 C7.8 48.5 8.3 48.2 8.5 48.1 C8.7 48.1 9.1 47.9 9.3 47.7 C9.6 47.5 10.1 47.3 10.4 47.2 C10.8 47.1 11.1 46.9 11.2 46.8 C11.8 46.5 12.1 45.3 12.9 41.1 C12.9 40.7 13.1 39.9 13.3 39.5 C13.5 39.1 13.7 38.4 13.8 38 C13.9 37.6 14.2 36.9 14.4 36.4 C14.6 35.9 14.8 35.3 14.9 35 C16.2 31.8 19.9 26.4 23 23.3 C25.7 20.7 29.3 18.1 31.7 17 C31.9 16.9 32.3 16.6 32.6 16.5 C32.9 16.3 33.5 16 33.8 15.9 C34.1 15.8 34.6 15.6 34.9 15.4 C35.2 15.3 35.8 15 36.2 14.9 C36.6 14.8 37.3 14.5 37.8 14.3 C38.3 14.1 39 13.9 39.4 13.8 C39.8 13.8 40.7 13.6 41.3 13.4 C45.2 12.3 53.8 12.3 57.2 13.3 C57.6 13.4 58.4 13.6 59.1 13.8 C59.7 13.9 60.6 14.1 61 14.3 C61.5 14.5 62.2 14.8 62.5 14.9 C62.9 15 63.5 15.2 63.9 15.4 C64.3 15.6 64.9 15.9 65.2 16 C65.5 16.1 65.9 16.3 66 16.4 C66.2 16.5 66.7 16.7 67.2 17 C75.4 21.4 82.7 30.1 85.2 38.4 C85.3 38.9 85.6 39.6 85.7 40.1 C85.9 40.5 86.1 41.4 86.2 42 C87 46.4 87.3 47.1 88.4 47.3 C89.1 47.4 89.4 47.5 89.8 47.8 C90.1 48.1 90.5 48.3 90.9 48.4 C91.3 48.5 91.6 48.7 91.9 48.9 C92.1 49.1 92.5 49.4 92.8 49.5 C93.1 49.6 93.5 49.9 93.8 50.2 C94.9 51.2 95.7 51.2 95.9 50.2 C96.2 49 95.6 42.6 95.1 40.5 C94.9 39.7 94.6 38.6 94.5 38.1 C94.4 37.5 94.1 36.7 94 36.2 C93.8 35.8 93.5 35 93.4 34.5 C93.2 33.9 93 33.3 92.8 33 C92.7 32.7 92.5 32.2 92.4 31.9 C91.9 30.7 90.8 28.4 89.5 26.3 C86.2 20.5 81.1 15.1 75.3 11.2 C74.3 10.6 73.3 9.9 73 9.8 C72.8 9.7 72.4 9.5 72.2 9.3 C72 9.2 71.5 8.9 71.1 8.8 C70.8 8.6 70.3 8.3 70.1 8.2 C69.9 8.1 69.4 7.9 69.1 7.7 C68.8 7.6 68.2 7.4 67.8 7.2 C67.5 7 66.8 6.7 66.4 6.6 C65.9 6.5 65.3 6.2 64.9 6.1 C64.6 5.9 63.8 5.6 63.2 5.5 C62.5 5.3 61.8 5.1 61.6 5 C60.9 4.8 60.2 4.6 59.1 4.4 C58.6 4.4 57.6 4.2 56.8 4 C54.2 3.5 53.6 3.5 50.1 3.4 C48.3 3.4 46.6 3.4 46.3 3.5Z"/><path d="M43.1 21.1 C42.6 21.3 42.7 21.9 43.5 23.1 C45.5 26.3 46 31.5 44.7 35.7 C44.5 36.3 44.3 37 44.2 37.4 C44.1 37.7 44 38.2 43.8 38.5 C43.7 38.8 43.4 39.5 43.2 39.9 C42.5 41.6 40.7 44.9 39 47.4 C37.8 49 35.9 51.9 35.7 52.2 C35.6 52.4 35.4 52.8 35.2 53.2 C34.9 53.5 34.7 54.1 34.5 54.4 C34.4 54.7 34.2 55.2 34.1 55.5 C33.9 55.8 33.7 56.4 33.5 57 C33.4 57.6 33.2 58.3 33.1 58.7 C31 66.2 35.6 74.6 44.3 79.5 C49.1 82.2 52 82.8 52 80.9 C52 80.2 51.5 78.8 51.1 78.4 C50.9 78.2 50.6 77.8 50.5 77.5 C50.4 77.3 50.1 76.9 49.9 76.7 C49.2 75.9 47.7 73 47.4 71.5 C46.8 69.4 47 65.4 47.8 63.4 C47.9 62.9 48.2 62.3 48.2 62 C48.4 61.5 49.4 59.4 50 58.3 C50.3 57.9 50.7 57.2 50.9 56.8 C51.1 56.5 51.5 55.8 51.7 55.4 C52.4 54.1 53.5 51.9 53.7 51.1 C53.8 50.8 54 50.3 54.2 49.9 C54.4 49.5 54.6 48.7 54.8 47.9 C54.9 47.2 55.1 46.4 55.2 46.2 C56 43.1 55.6 37.5 54.2 34.8 C54.1 34.6 53.8 34 53.7 33.6 C53.2 32.4 51.8 30.2 50.1 28 C45.9 22.6 43.9 20.6 43.1 21.1Z"/></g>
-    <text x="750" y="474" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="26" letter-spacing="9" fill="#CDEBFF">BLUE EMBER</text>
-    <text x="750" y="498" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="12" letter-spacing="6" fill="#5AB0FF">CONCEPTS &#8226; MANDEVILLE</text>
-    <rect x="980" y="240" width="130" height="320" fill="url(#cmDoor)" stroke="#1F8BFF" stroke-opacity=".45" stroke-width="2"/>
-    <rect x="995" y="260" width="100" height="130" fill="url(#cmGlass)" stroke="#1F8BFF" stroke-opacity=".3" stroke-width="1.5"/>
-    <circle cx="1080" cy="420" r="6" fill="#1F8BFF"/>
-    <circle cx="1078" cy="418" r="2" fill="#CDEBFF" opacity=".8"/>
-    <g fill="#1F8BFF" opacity=".55"><circle cx="1108" cy="592" r="5"/><circle cx="1128" cy="604" r="3.5"/><circle cx="1148" cy="592" r="2.6"/><circle cx="1168" cy="604" r="2"/><circle cx="1128" cy="576" r="2.4"/></g>
+    <g fill="#CDEBFF"><circle cx="160" cy="14" r="1.4" opacity=".6"/><circle cx="470" cy="22" r="1" opacity=".5"/><circle cx="820" cy="12" r="1.2" opacity=".6"/><circle cx="1010" cy="26" r="1" opacity=".4"/></g>
+    <rect x="0" y="96" width="70" height="464" fill="url(#cmNbr)"/>
+    <rect x="1130" y="118" width="70" height="442" fill="url(#cmNbr)"/>
+    <rect x="30" y="96" width="4" height="464" fill="#081526"/>
+    <rect x="12" y="330" width="40" height="70" fill="#1B3A5E" opacity=".55"/>
+
+    <!-- upper storey: vertical slat cladding washed from above -->
+    <rect x="70" y="36" width="1060" height="8" fill="#2A4A6E"/>
+    <rect x="70" y="36" width="1060" height="2" fill="#8FB6DC" opacity=".5"/>
+    <rect x="70" y="44" width="1060" height="174" fill="url(#cmSlats)"/>
+    <rect x="70" y="44" width="1060" height="174" fill="url(#cmWash)"/>
+    <g fill="#E6F3FF"><rect x="150" y="44" width="30" height="3" rx="1.5"/><rect x="420" y="44" width="30" height="3" rx="1.5"/><rect x="750" y="44" width="30" height="3" rx="1.5"/><rect x="1020" y="44" width="30" height="3" rx="1.5"/></g>
+
+    <!-- halo-lit channel letters -->
+    <text x="600" y="150" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700" font-size="92" fill="#1F8BFF" filter="url(#cmBlur)" opacity=".95">Mandeville</text>
+    <text x="600" y="150" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700" font-size="92" fill="#F5EFE3">Mandeville</text>
+    <g fill="#5AB0FF"><rect x="356" y="178" width="92" height="1.5"/><rect x="752" y="178" width="92" height="1.5"/></g>
+    <text x="600" y="184" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="600" font-size="17" letter-spacing="10" fill="#CDEBFF">BAKERY &#183; 1998</text>
+
+    <!-- ground-floor frame -->
+    <rect x="70" y="218" width="1060" height="342" fill="#0B1A2C"/>
+    <rect x="70" y="218" width="70" height="342" fill="#102339"/>
+    <rect x="940" y="218" width="190" height="342" fill="#102339"/>
+
+    <!-- interior (seen through the glass) -->
+    <g clip-path="url(#cmBays)">
+      <rect x="140" y="240" width="990" height="320" fill="url(#cmRoom)"/>
+      <!-- bay 1: bread wall -->
+      <g fill="#8A6440"><rect x="166" y="352" width="348" height="5"/><rect x="166" y="410" width="348" height="5"/></g>
+      <g fill="#C48A4E">
+        <ellipse cx="190" cy="343" rx="17" ry="9"/><ellipse cx="232" cy="343" rx="17" ry="9"/><ellipse cx="274" cy="343" rx="17" ry="9"/><ellipse cx="316" cy="343" rx="17" ry="9"/><ellipse cx="364" cy="343" rx="17" ry="9"/><ellipse cx="406" cy="343" rx="17" ry="9"/><ellipse cx="448" cy="343" rx="17" ry="9"/><ellipse cx="490" cy="343" rx="17" ry="9"/>
+        <rect x="178" y="387" width="34" height="22" rx="7"/><rect x="220" y="387" width="34" height="22" rx="7"/><rect x="262" y="387" width="34" height="22" rx="7"/><rect x="304" y="387" width="34" height="22" rx="7"/><rect x="346" y="387" width="34" height="22" rx="7"/><rect x="388" y="387" width="34" height="22" rx="7"/><rect x="430" y="387" width="34" height="22" rx="7"/><rect x="472" y="387" width="34" height="22" rx="7"/>
+      </g>
+      <g fill="#E8B77C" opacity=".75">
+        <ellipse cx="186" cy="338" rx="8" ry="2.5"/><ellipse cx="228" cy="338" rx="8" ry="2.5"/><ellipse cx="270" cy="338" rx="8" ry="2.5"/><ellipse cx="312" cy="338" rx="8" ry="2.5"/><ellipse cx="360" cy="338" rx="8" ry="2.5"/><ellipse cx="402" cy="338" rx="8" ry="2.5"/><ellipse cx="444" cy="338" rx="8" ry="2.5"/><ellipse cx="486" cy="338" rx="8" ry="2.5"/>
+        <rect x="182" y="389" width="26" height="3" rx="1.5"/><rect x="224" y="389" width="26" height="3" rx="1.5"/><rect x="266" y="389" width="26" height="3" rx="1.5"/><rect x="308" y="389" width="26" height="3" rx="1.5"/><rect x="350" y="389" width="26" height="3" rx="1.5"/><rect x="392" y="389" width="26" height="3" rx="1.5"/><rect x="434" y="389" width="26" height="3" rx="1.5"/><rect x="476" y="389" width="26" height="3" rx="1.5"/>
+      </g>
+      <rect x="140" y="470" width="400" height="80" fill="#6E5236"/>
+      <rect x="140" y="470" width="400" height="4" fill="#A98259"/>
+      <g stroke="#5A422B" stroke-width="2"><path d="M140 492h400M140 514h400M140 536h400"/></g>
+      <!-- bay 2: blue neon script over a terrazzo counter -->
+      <text x="750" y="356" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="50" fill="none" stroke="#1F8BFF" stroke-width="6" filter="url(#cmSoft)" opacity=".9">baked daily</text>
+      <text x="750" y="356" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="50" fill="none" stroke="#CDEBFF" stroke-width="1.6">baked daily</text>
+      <rect x="600" y="444" width="300" height="30" fill="#CDEBFF" opacity=".12"/>
+      <rect x="600" y="444" width="300" height="30" fill="none" stroke="#CDEBFF" stroke-opacity=".35"/>
+      <g fill="#D9A066"><ellipse cx="640" cy="466" rx="16" ry="6"/><ellipse cx="690" cy="466" rx="16" ry="6"/><ellipse cx="740" cy="466" rx="16" ry="6"/><ellipse cx="790" cy="466" rx="16" ry="6"/><ellipse cx="840" cy="466" rx="16" ry="6"/></g>
+      <rect x="590" y="474" width="320" height="76" fill="url(#cmCounter)"/>
+      <rect x="590" y="474" width="320" height="4" fill="#FFFFFF" opacity=".7"/>
+      <g fill="#7F786C" opacity=".35"><circle cx="620" cy="500" r="2"/><circle cx="668" cy="522" r="1.6"/><circle cx="712" cy="496" r="2.2"/><circle cx="760" cy="530" r="1.6"/><circle cx="806" cy="505" r="2"/><circle cx="850" cy="526" r="1.8"/><circle cx="886" cy="498" r="1.6"/></g>
+      <rect x="590" y="538" width="320" height="12" fill="#1F8BFF" opacity=".85"/>
+      <!-- warm pendants -->
+      <g stroke="#0A1626" stroke-width="1.5"><path d="M240 240v56M440 240v56M660 240v38M840 240v38M1045 248v40"/></g>
+      <g fill="url(#cmWarm)"><circle cx="240" cy="320" r="120"/><circle cx="440" cy="320" r="120"/><circle cx="660" cy="300" r="110"/><circle cx="840" cy="300" r="110"/><circle cx="1045" cy="312" r="80"/></g>
+      <g fill="#E7C489"><path d="M218 312a22 18 0 0 1 44 0z"/><path d="M418 312a22 18 0 0 1 44 0z"/><path d="M638 294a22 18 0 0 1 44 0z"/><path d="M818 294a22 18 0 0 1 44 0z"/><path d="M1031 302a14 12 0 0 1 28 0z"/></g>
+      <g fill="#FFF4DD"><ellipse cx="240" cy="312" rx="18" ry="3"/><ellipse cx="440" cy="312" rx="18" ry="3"/><ellipse cx="660" cy="294" rx="18" ry="3"/><ellipse cx="840" cy="294" rx="18" ry="3"/><ellipse cx="1045" cy="302" rx="11" ry="2"/></g>
+      <!-- glass: tint + reflections -->
+      <rect x="140" y="240" width="990" height="320" fill="url(#cmGlass)"/>
+      <path d="M170 548 392 246M236 548 458 246M600 548 800 246" stroke="#E6F3FF" stroke-opacity=".07" stroke-width="30" fill="none"/>
+      <path d="M270 548 492 246M650 548 850 246M1000 552 1100 400" stroke="#E6F3FF" stroke-opacity=".12" stroke-width="3" fill="none"/>
+    </g>
+
+    <!-- slim black mullions -->
+    <g fill="none" stroke="#050E18"><rect x="143" y="243" width="394" height="308" stroke-width="6"/><rect x="563" y="243" width="374" height="308" stroke-width="6"/><path d="M340 246v302M750 246v302" stroke-width="4"/></g>
+    <g fill="none" stroke="#CDEBFF" stroke-opacity=".18"><rect x="146.5" y="246.5" width="387" height="301"/><rect x="566.5" y="246.5" width="367" height="301"/></g>
+    <!-- window vinyl -->
+    <text x="340" y="270" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="600" font-size="11" letter-spacing="4" fill="#F5EFE3" opacity=".9">HARD DOUGH &#183; COCOA BREAD &#183; BULLA</text>
+    <text x="750" y="270" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="600" font-size="11" letter-spacing="4" fill="#F5EFE3" opacity=".9">OPEN DAILY FROM 6AM</text>
+    <!-- stone plinth -->
+    <rect x="70" y="548" width="1060" height="12" fill="#1A2F48"/>
+    <rect x="70" y="548" width="1060" height="1.5" fill="#CDEBFF" opacity=".25"/>
+
+    <!-- door: frameless glass, long pull -->
+    <rect x="981" y="242" width="128" height="318" fill="none" stroke="#050E18" stroke-width="8"/>
+    <rect x="1004" y="330" width="6" height="150" rx="3" fill="#CDEBFF"/>
+    <rect x="1005" y="330" width="2" height="150" fill="#FFFFFF" opacity=".8"/>
+    <g fill="#050E18"><rect x="1008" y="345" width="10" height="4"/><rect x="1008" y="461" width="10" height="4"/></g>
+    <text x="1045" y="530" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="10" letter-spacing="3" fill="#F5EFE3" opacity=".75">No. 12</text>
+
+    <!-- maker's plaque on the left pier -->
+    <rect x="84" y="392" width="42" height="64" fill="#081526" stroke="#1F8BFF" stroke-opacity=".5"/>
+    <g id="cmFlame" transform="translate(90 402) scale(.3)" fill="#1F8BFF"><path d="M46.3 3.5 C45.3 3.5 43.4 3.8 42.3 4 C41.7 4.1 40.6 4.3 39.8 4.4 C39 4.6 38 4.8 37.5 5 C37 5.1 36.2 5.4 35.7 5.5 C35.1 5.6 34.4 5.9 33.9 6.1 C33.5 6.3 32.9 6.5 32.6 6.6 C32.3 6.7 31.6 6.9 31.2 7.1 C30.7 7.4 30.1 7.6 29.8 7.7 C29.6 7.8 29.1 8 28.8 8.2 C28.5 8.4 28.1 8.6 27.8 8.7 C27.5 8.9 27.1 9.1 26.8 9.3 C26.6 9.4 26.1 9.7 25.9 9.8 C24 10.8 20 13.7 17.5 16.2 C13.6 19.8 9.2 25.8 7.6 29.6 C7.5 29.8 7.3 30.3 7.1 30.6 C6.9 30.9 6.7 31.4 6.6 31.8 C6.5 32.1 6.2 32.7 6.1 33.1 C5.9 33.4 5.6 34.1 5.5 34.5 C5.4 35 5.2 35.7 5 36.2 C4.8 36.6 4.6 37.4 4.5 37.9 C4.4 38.5 4.2 39.4 4 39.9 C3.4 42 3 45.6 3 49 C3 51.9 3.1 52 5.2 50.3 C5.6 50 6.1 49.6 6.3 49.5 C6.4 49.4 6.9 49.1 7.4 48.8 C7.8 48.5 8.3 48.2 8.5 48.1 C8.7 48.1 9.1 47.9 9.3 47.7 C9.6 47.5 10.1 47.3 10.4 47.2 C10.8 47.1 11.1 46.9 11.2 46.8 C11.8 46.5 12.1 45.3 12.9 41.1 C12.9 40.7 13.1 39.9 13.3 39.5 C13.5 39.1 13.7 38.4 13.8 38 C13.9 37.6 14.2 36.9 14.4 36.4 C14.6 35.9 14.8 35.3 14.9 35 C16.2 31.8 19.9 26.4 23 23.3 C25.7 20.7 29.3 18.1 31.7 17 C31.9 16.9 32.3 16.6 32.6 16.5 C32.9 16.3 33.5 16 33.8 15.9 C34.1 15.8 34.6 15.6 34.9 15.4 C35.2 15.3 35.8 15 36.2 14.9 C36.6 14.8 37.3 14.5 37.8 14.3 C38.3 14.1 39 13.9 39.4 13.8 C39.8 13.8 40.7 13.6 41.3 13.4 C45.2 12.3 53.8 12.3 57.2 13.3 C57.6 13.4 58.4 13.6 59.1 13.8 C59.7 13.9 60.6 14.1 61 14.3 C61.5 14.5 62.2 14.8 62.5 14.9 C62.9 15 63.5 15.2 63.9 15.4 C64.3 15.6 64.9 15.9 65.2 16 C65.5 16.1 65.9 16.3 66 16.4 C66.2 16.5 66.7 16.7 67.2 17 C75.4 21.4 82.7 30.1 85.2 38.4 C85.3 38.9 85.6 39.6 85.7 40.1 C85.9 40.5 86.1 41.4 86.2 42 C87 46.4 87.3 47.1 88.4 47.3 C89.1 47.4 89.4 47.5 89.8 47.8 C90.1 48.1 90.5 48.3 90.9 48.4 C91.3 48.5 91.6 48.7 91.9 48.9 C92.1 49.1 92.5 49.4 92.8 49.5 C93.1 49.6 93.5 49.9 93.8 50.2 C94.9 51.2 95.7 51.2 95.9 50.2 C96.2 49 95.6 42.6 95.1 40.5 C94.9 39.7 94.6 38.6 94.5 38.1 C94.4 37.5 94.1 36.7 94 36.2 C93.8 35.8 93.5 35 93.4 34.5 C93.2 33.9 93 33.3 92.8 33 C92.7 32.7 92.5 32.2 92.4 31.9 C91.9 30.7 90.8 28.4 89.5 26.3 C86.2 20.5 81.1 15.1 75.3 11.2 C74.3 10.6 73.3 9.9 73 9.8 C72.8 9.7 72.4 9.5 72.2 9.3 C72 9.2 71.5 8.9 71.1 8.8 C70.8 8.6 70.3 8.3 70.1 8.2 C69.9 8.1 69.4 7.9 69.1 7.7 C68.8 7.6 68.2 7.4 67.8 7.2 C67.5 7 66.8 6.7 66.4 6.6 C65.9 6.5 65.3 6.2 64.9 6.1 C64.6 5.9 63.8 5.6 63.2 5.5 C62.5 5.3 61.8 5.1 61.6 5 C60.9 4.8 60.2 4.6 59.1 4.4 C58.6 4.4 57.6 4.2 56.8 4 C54.2 3.5 53.6 3.5 50.1 3.4 C48.3 3.4 46.6 3.4 46.3 3.5Z"/><path d="M43.1 21.1 C42.6 21.3 42.7 21.9 43.5 23.1 C45.5 26.3 46 31.5 44.7 35.7 C44.5 36.3 44.3 37 44.2 37.4 C44.1 37.7 44 38.2 43.8 38.5 C43.7 38.8 43.4 39.5 43.2 39.9 C42.5 41.6 40.7 44.9 39 47.4 C37.8 49 35.9 51.9 35.7 52.2 C35.6 52.4 35.4 52.8 35.2 53.2 C34.9 53.5 34.7 54.1 34.5 54.4 C34.4 54.7 34.2 55.2 34.1 55.5 C33.9 55.8 33.7 56.4 33.5 57 C33.4 57.6 33.2 58.3 33.1 58.7 C31 66.2 35.6 74.6 44.3 79.5 C49.1 82.2 52 82.8 52 80.9 C52 80.2 51.5 78.8 51.1 78.4 C50.9 78.2 50.6 77.8 50.5 77.5 C50.4 77.3 50.1 76.9 49.9 76.7 C49.2 75.9 47.7 73 47.4 71.5 C46.8 69.4 47 65.4 47.8 63.4 C47.9 62.9 48.2 62.3 48.2 62 C48.4 61.5 49.4 59.4 50 58.3 C50.3 57.9 50.7 57.2 50.9 56.8 C51.1 56.5 51.5 55.8 51.7 55.4 C52.4 54.1 53.5 51.9 53.7 51.1 C53.8 50.8 54 50.3 54.2 49.9 C54.4 49.5 54.6 48.7 54.8 47.9 C54.9 47.2 55.1 46.4 55.2 46.2 C56 43.1 55.6 37.5 54.2 34.8 C54.1 34.6 53.8 34 53.7 33.6 C53.2 32.4 51.8 30.2 50.1 28 C45.9 22.6 43.9 20.6 43.1 21.1Z"/></g>
+    <rect x="94" y="444" width="22" height="1.2" fill="#5AB0FF" opacity=".7"/>
+
+    <!-- cantilevered canopy with LED edge -->
+    <path d="M110 218h980l14 14H96z" fill="#050E18"/>
+    <rect x="96" y="232" width="1008" height="3" fill="#5AB0FF"/>
+    <rect x="96" y="229" width="1008" height="10" fill="#1F8BFF" opacity=".5" filter="url(#cmSoft)"/>
+    <g fill="url(#cmCone)"><path d="M232 235h16l62 325H170z"/><path d="M432 235h16l62 325H370z"/><path d="M652 235h16l62 325H590z"/><path d="M852 235h16l62 325H790z"/><path d="M1037 235h16l52 325H985z"/></g>
+
+    <!-- blade sign -->
+    <rect x="1130" y="252" width="58" height="4" fill="#2A4A6E"/>
+    <path d="M1150 256v8M1170 256v8" stroke="#2A4A6E" stroke-width="2"/>
+    <circle cx="1160" cy="296" r="32" fill="#0A1E36" stroke="#1F8BFF" stroke-width="2"/>
+    <circle cx="1160" cy="296" r="26" fill="none" stroke="#CDEBFF" stroke-opacity=".25"/>
+    <text x="1160" y="308" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700" font-size="34" fill="#F5EFE3">M</text>
+
+    <!-- pavement -->
+    <rect y="560" width="1200" height="80" fill="url(#cmPave)"/>
+    <rect y="560" width="1200" height="2" fill="#5AB0FF" opacity=".35"/>
+    <g stroke="#081A2E" stroke-width="1.5" opacity=".7"><path d="M0 584h1200M0 612h1200M60 560l-12 80M200 560l-8 80M340 560l-4 80M480 560v80M620 560l4 80M760 560l8 80M900 560l12 80M1040 560l16 80M1180 560l20 80"/></g>
+    <g fill="url(#cmPool)"><ellipse cx="340" cy="576" rx="220" ry="18"/><ellipse cx="750" cy="576" rx="210" ry="18"/><ellipse cx="1045" cy="574" rx="80" ry="14"/></g>
+
+    <!-- chalk A-board -->
+    <path d="M478 492h46l10 68h-6l-8-58h-38l-8 58h-6z" fill="#3B2B1C"/>
+    <rect x="482" y="498" width="38" height="42" fill="#12202E"/>
+    <text x="501" y="514" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="10" fill="#F5EFE3">Bulla</text>
+    <text x="501" y="528" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="6.5" letter-spacing="1" fill="#5AB0FF">&amp; CHEESE</text>
+
+    <!-- planter under the blade sign -->
+    <rect x="1138" y="512" width="46" height="48" fill="#1A2F48"/>
+    <rect x="1138" y="512" width="46" height="3" fill="#CDEBFF" opacity=".25"/>
+    <path d="M1161 512v-38" stroke="#3B2B1C" stroke-width="3"/>
+    <g fill="#1E5A4A"><circle cx="1161" cy="462" r="22"/><circle cx="1146" cy="472" r="14"/><circle cx="1177" cy="470" r="14"/></g>
+    <g fill="#2E7A62" opacity=".8"><circle cx="1155" cy="455" r="10"/><circle cx="1170" cy="462" r="7"/></g>
   </svg>
           </div>
           <span class="compare-tag compare-tag-a">Before</span>
